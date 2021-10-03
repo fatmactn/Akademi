@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
@@ -24,11 +24,17 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             return redirect()->route('backend.home.index');
+        } else {
+            return redirect()->route('backend.login.login');
         }
     }
 
+
     public function logout()
     {
-        return redirect()->route('backend.login.login');
+        if (Auth::check()) {
+            Auth::logout();
+            return redirect()->route('backend.login.login');
+        }
     }
 }

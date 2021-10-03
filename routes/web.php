@@ -19,10 +19,13 @@ Route::get('/', function () {
 
 Route::get('/login', [\App\Http\Controllers\Backend\LoginController::class, 'index'])->name('backend.login.index');
 Route::post('/login', [\App\Http\Controllers\Backend\LoginController::class, 'login'])->name('backend.login.login');
-Route::get('logout', [\App\Http\Controllers\Backend\LoginController::class, 'logout'])->name('backend.login.logout');
+Route::get('logout', [\App\Http\Controllers\Backend\LoginController::class, 'logout'])->middleware('auth')->name('backend.login.logout');
 
+/*
 Route::middleware('auth')->group(function () {
     Route::get('/backend/home/index', [\App\Http\Controllers\Backend\HomeController::class, 'index'])->name('backend.home.index');
     Route::get('/backend/question/index', [\App\Http\Controllers\Backend\QuestionController::class, 'index'])->name('backend.question.index');
-});
+});*/
 
+Route::get('/backend/home/index', [\App\Http\Controllers\Backend\HomeController::class, 'index'])->name('backend.home.index');
+Route::get('/backend/question/index', [\App\Http\Controllers\Backend\QuestionController::class, 'index'])->name('backend.question.index');

@@ -178,11 +178,11 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">MISCELLANEOUS</li>
+                <li class="nav-header">ACCOUNT</li>
                 <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Documentation</p>
+                    <a href="/logout" class="nav-link">
+                        <i class="nav-icon fa fa-sign-out-alt" aria-hidden="true"></i>
+                        <p>Logout</p>
                     </a>
                 </li>
 

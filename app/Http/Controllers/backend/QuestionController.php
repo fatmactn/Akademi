@@ -11,7 +11,6 @@ class QuestionController extends Controller
 {
     public function index()
     {
-
         $questions = Question::all();
 
         return view('backend.question.index', compact('questions'));

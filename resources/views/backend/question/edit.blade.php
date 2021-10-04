@@ -5,8 +5,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('backend.question.update', $question->id) }}">
-                        @method('PUT')
+                    <form method="POST" action="{{ route('backend.question.update', ['question' => $question]) }}">
+                        @method('POST')
                         @csrf
                         <div class="form-group">
                             <label>Soru</label>

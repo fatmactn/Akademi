@@ -25,16 +25,14 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('backend.home.index');
         } else {
-            return redirect()->route('backend.login.login');
+            return redirect()->route('backend.login.index');
         }
     }
 
 
     public function logout()
     {
-        if (Auth::check()) {
-            Auth::logout();
-            return redirect()->route('backend.login.login');
-        }
+        Auth::logout();
+        return redirect()->route('backend.login.index');
     }
 }

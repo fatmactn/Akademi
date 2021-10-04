@@ -11,12 +11,6 @@ class QuestionController extends Controller
 {
     public function index()
     {
-        //auth control
-        if (!Auth::check()) {
-            return redirect()->route('backend.login.login');
-        } elseif (auth()->user()->status !== 1) { //is Admin ?
-            return redirect()->route('backend.login.login');
-        }
 
         $questions = Question::all();
 
@@ -41,26 +35,41 @@ class QuestionController extends Controller
 
     public function edit($id)
     {
-        $question = Question::find($id) ?? abort(404,'Soru Bulunamadı.');
+        $question = Question::find($id) ?? abort(404, 'Soru Bulunamadı.');
 
-        return view('backend.question.edit',compact('question'));
+        return view('backend.question.edit', compact('question'));
     }
 
-    public function update(Request $request, $id)
+    public function show($id)
+    {
+        $question = Question::where('id', $id);
+
+        return view('backend.question.edit', compact('question'));
+    }
+
+    public function update(Request $request, Question $question)
     {
         $request->validate([
             'question' => 'required',
             'answer' => 'required'
         ]);
 
-        $question = Question::find($id) ?? abort(404,'Soru Bulunamadı.');
-        Question::where('id',$id)->update($request->except(['_method','_token']));
+        //dd($request->all());
+
+        $question->update([
+            'question' => $request->question,
+            'answer' => $request->answer,
+            'status' => (isset($request->status) && ($request->status == 'on')) ? true:false,
+        ]);
+
+        //dd($question);
+
         return redirect()->route('backend.question.index')->withSuccess('Soru Başarıyla Güncellendi.');
     }
 
     public function destroy($id)
     {
-        $question = Question::find($id) ?? abort(404,'Soru Bulunamadı.');
+        $question = Question::find($id) ?? abort(404, 'Soru Bulunamadı.');
         $question->delete();
         return redirect()->route('backend.question.index')->withSuccess('Soru Başarıyla Silindi.');
     }

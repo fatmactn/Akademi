@@ -45,31 +45,6 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Forms
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contact</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/advanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contact</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
                             Tables
@@ -78,34 +53,46 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/backend/content/index" class="nav-link">
+                            <a href="/backend/contact/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Content Tables</p>
+                                <p>Contact Information</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
+                            <a href="/backend/content/index" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Contents</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/backend/employee/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Employees</p>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/backend/form/index" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Forms</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/backend/question/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Questions Table</p>
+                                <p>Questions</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/backend/user/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Users Table</p>
+                                <p>Users</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
+                    <a href="/backend/office-image/index" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Office Images

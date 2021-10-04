@@ -59,6 +59,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/backend/contact-form/index" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Contact Forms</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/backend/content/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Contents</p>

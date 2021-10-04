@@ -78,7 +78,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
+                            <a href="/backend/content/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Content Tables</p>
                             </a>
@@ -93,6 +93,12 @@
                             <a href="/backend/question/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Questions Table</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/backend/user/index" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Users Table</p>
                             </a>
                         </li>
                     </ul>

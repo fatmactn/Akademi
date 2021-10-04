@@ -39,5 +39,18 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/backend/question/update/{question}', [\App\Http\Controllers\Backend\QuestionController::class, 'update'])->name('backend.question.update');
     Route::get('backend/question/create',[\App\Http\Controllers\Backend\QuestionController::class, 'create'])->name('backend.question.create');
     Route::post('backend/question/store',[\App\Http\Controllers\Backend\QuestionController::class, 'store'])->name('backend.question.store');
-
+    Route::get('/backend/content/index', [\App\Http\Controllers\Backend\ContentController::class, 'index'])->name('backend.content.index');
+    Route::get('/backend/content/{id}',[\App\Http\Controllers\Backend\ContentController::class,'destroy'])->whereNumber('id')->name('backend.content.destroy');
+    Route::get('/backend/content/edit/{id}', [\App\Http\Controllers\Backend\ContentController::class, 'edit'])->whereNumber('id')->name('backend.content.edit');
+    Route::get('/backend/content/update/{id}', [\App\Http\Controllers\Backend\ContentController::class, 'show'])->whereNumber('id')->name('backend.content.show');
+    Route::post('/backend/content/update/{content}', [\App\Http\Controllers\Backend\ContentController::class, 'update'])->name('backend.content.update');
+    Route::get('backend/content/create',[\App\Http\Controllers\Backend\ContentController::class, 'create'])->name('backend.content.create');
+    Route::post('backend/content/store',[\App\Http\Controllers\Backend\ContentController::class, 'store'])->name('backend.content.store');
+    Route::get('/backend/user/index', [\App\Http\Controllers\Backend\UserController::class, 'index'])->name('backend.user.index');
+    Route::get('/backend/user/{id}',[\App\Http\Controllers\Backend\UserController::class,'destroy'])->whereNumber('id')->name('backend.user.destroy');
+    Route::get('/backend/user/update/{user}', [\App\Http\Controllers\Backend\UserController::class, 'update'])->name('backend.user.update');
+    Route::get('/backend/contact/index', [\App\Http\Controllers\Backend\ContactController::class, 'index'])->name('backend.contact.index');
+    Route::get('/backend/contact/edit/{id}', [\App\Http\Controllers\Backend\ContactController::class, 'edit'])->name('backend.contact.edit');
+    Route::get('/backend/contact/update/{id}', [\App\Http\Controllers\Backend\ContactController::class, 'show'])->name('backend.contact.show');
+    Route::post('/backend/contact/update/{contact}', [\App\Http\Controllers\Backend\ContactController::class, 'update'])->name('backend.contact.update');
 });

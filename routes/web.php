@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('backend/question/create',[\App\Http\Controllers\Backend\QuestionController::class, 'create'])->name('backend.question.create');
     Route::post('backend/question/store',[\App\Http\Controllers\Backend\QuestionController::class, 'store'])->name('backend.question.store');
 
+    Route::get('backend/employee/index',[EmployeeController::class, 'index'])->name('backend.employee.index');
+    Route::get('backend/employee/create',[EmployeeController::class, 'create'])->name('backend.employee.create');
+    Route::post('backend/employee/store',[EmployeeController::class, 'store'])->name('backend.employee.store');
+    Route::get('/backend/employee/edit/{id}', [EmployeeController::class, 'edit'])->whereNumber('id')->name('backend.employee.edit');
+    Route::post('/backend/employee/update/{employee}', [EmployeeController::class, 'update'])->name('backend.employee.update');
+    Route::get('/backend/employee/{id}',[EmployeeController::class,'destroy'])->whereNumber('id')->name('backend.employee.destroy');
+
+
+
+
+
 });
+

@@ -81,5 +81,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/backend/employee/{id}',[EmployeeController::class,'destroy'])->whereNumber('id')->name('backend.employee.destroy');
 
 
+    Route::get('/backend/contact-form/index', [\App\Http\Controllers\Backend\ContactFormController::class, 'index'])->name('backend.contact-form.index');
+    Route::get('/backend/contact-form/{id}',[\App\Http\Controllers\Backend\ContactFormController::class,'destroy'])->name('backend.contact-form.destroy');
+
 });
 

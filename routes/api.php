@@ -16,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('questions', [\App\Http\Controllers\api\QuestionController::class,'index'])->name('api.questions.index');
 Route::get('questions/{id}', [\App\Http\Controllers\api\QuestionController::class,'show'])->name('api.questions.show');
+Route::get('questions/{id}', [\App\Http\Controllers\api\QuestionController::class,'destroy'])->name('api.questions.destroy');
 Route::post('questions', [\App\Http\Controllers\api\QuestionController::class,'create'])->name('api.questions.create');
+Route::post('questions/update/{id}', [\App\Http\Controllers\api\QuestionController::class, 'update'])->name('api.questions.update');
+
+

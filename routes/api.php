@@ -20,4 +20,12 @@ Route::get('questions/{id}', [\App\Http\Controllers\api\QuestionController::clas
 Route::post('questions', [\App\Http\Controllers\api\QuestionController::class,'create'])->name('api.questions.create');
 Route::post('questions/update/{id}', [\App\Http\Controllers\api\QuestionController::class, 'update'])->name('api.questions.update');
 
+Route::get('contents', [\App\Http\Controllers\api\ContentController::class,'index'])->name('api.contents.index');
+Route::get('contents/{id}', [\App\Http\Controllers\api\ContentController::class,'show'])->name('api.contents.show');
+Route::post('contents', [\App\Http\Controllers\api\ContentController::class,'create'])->name('api.contents.create');
+
+Route::get('employees', [\App\Http\Controllers\api\EmployeeController::class,'index'])->name('api.employees.index');
+Route::get('employees/{id}', [\App\Http\Controllers\api\EmployeeController::class,'show'])->name('api.employees.show');
+Route::post('employees', [\App\Http\Controllers\api\EmployeeController::class,'create'])->name('api.employees.create');
+
 

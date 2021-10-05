@@ -78,6 +78,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/backend/employee/edit/{id}', [EmployeeController::class, 'edit'])->whereNumber('id')->name('backend.employee.edit');
     Route::post('/backend/employee/update/{employee}', [EmployeeController::class, 'update'])->name('backend.employee.update');
     Route::get('/backend/employee/{id}',[EmployeeController::class,'destroy'])->whereNumber('id')->name('backend.employee.destroy');
-    Route::post('/backend/employee/update/{question}', [employeeController::class, 'update'])->name('backend.employee.update');
+
 
 });

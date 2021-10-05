@@ -61,4 +61,59 @@ class QuestionController extends Controller
             ],$exception->getCode());
         }
     }
+
+    public function destroy($id)
+    {
+        try {
+            $question = Question::find($id);
+            if($question==null){
+                return response([
+                    'message' => $id . ' Değişkeni yok'
+                ],200);
+            }
+            else{
+                $question->delete();
+                return response([
+                    'message' => $id . ' Değişkeni başarıyla silindi.'
+                ],200);
+            }
+        }
+        catch (\Exception $exception) {
+            return response([
+                'status' => 'error',
+                'message' => $exception->getMessage()
+            ],$exception->getCode());
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $question = Question::find($id);
+            if($question==null){
+                return response([
+                    'message' => $id . ' Değişkeni yok'
+                ],200);
+            }
+            else
+            {
+                $question->update([
+                    'question' => $request->question,
+                    'answer' => $request->answer,
+                    'status' => $request->status,
+                ]);
+                return response([
+                    'message' => $id . ' Değişkeni başarıyla güncellendi.'
+                ],200);
+            }
+
+        }
+        catch (\Exception $exception)
+        {
+            return response([
+                'status' => 'error',
+                'message' => $exception->getMessage()
+            ],$exception->getCode());
+        }
+    }
 }

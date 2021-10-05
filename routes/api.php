@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('questions', [\App\Http\Controllers\api\QuestionController::class,'index'])->name('api.questions.index');
+Route::get('questions/{id}', [\App\Http\Controllers\api\QuestionController::class,'show'])->name('api.questions.show');
+Route::post('questions', [\App\Http\Controllers\api\QuestionController::class,'create'])->name('api.questions.create');

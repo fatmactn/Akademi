@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,20 +82,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

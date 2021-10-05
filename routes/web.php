@@ -61,4 +61,23 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/backend/form/index', [\App\Http\Controllers\Backend\FormController::class, 'index'])->name('backend.form.index');
     Route::get('/backend/form/{id}',[\App\Http\Controllers\Backend\FormController::class,'destroy'])->name('backend.form.destroy');
 
+    Route::get('/backend/officeImage/index', [\App\Http\Controllers\Backend\OfficeImageController::class, 'index'])->name('backend.officeImage.index');
+    Route::get('/backend/officeImage/{id}',[\App\Http\Controllers\Backend\OfficeImageController::class,'destroy'])->whereNumber('id')->name('backend.officeImage.destroy');
+    Route::get('/backend/officeImage/edit/{id}', [\App\Http\Controllers\Backend\OfficeImageController::class, 'edit'])->whereNumber('id')->name('backend.officeImage.edit');
+    Route::get('/backend/officeImage/update/{id}', [\App\Http\Controllers\Backend\OfficeImageController::class, 'show'])->whereNumber('id')->name('backend.officeImage.show');
+    Route::post('/backend/officeImage/update/{officeImage}', [\App\Http\Controllers\Backend\OfficeImageController::class, 'update'])->name('backend.officeImage.update');
+    Route::get('backend/officeImage/create',[\App\Http\Controllers\Backend\OfficeImageController::class, 'create'])->name('backend.officeImage.create');
+    Route::post('backend/officeImage/store',[\App\Http\Controllers\Backend\OfficeImageController::class, 'store'])->name('backend.officeImage.store');
+
+    Route::get('/backend/contact-form/index', [\App\Http\Controllers\Backend\ContactFormController::class, 'index'])->name('backend.contact-form.index');
+    Route::get('/backend/contact-form/{id}',[\App\Http\Controllers\Backend\ContactFormController::class,'destroy'])->name('backend.contact-form.destroy');
+
+    Route::get('backend/employee/index',[EmployeeController::class, 'index'])->name('backend.employee.index');
+    Route::get('backend/employee/create',[EmployeeController::class, 'create'])->name('backend.employee.create');
+    Route::post('backend/employee/store',[EmployeeController::class, 'store'])->name('backend.employee.store');
+    Route::get('/backend/employee/edit/{id}', [EmployeeController::class, 'edit'])->whereNumber('id')->name('backend.employee.edit');
+    Route::post('/backend/employee/update/{employee}', [EmployeeController::class, 'update'])->name('backend.employee.update');
+    Route::get('/backend/employee/{id}',[EmployeeController::class,'destroy'])->whereNumber('id')->name('backend.employee.destroy');
+
+
 });

@@ -6736,7 +6736,7 @@ var FullCalendar = (function (exports) {
         var endMarker = framingRange.end;
         var instanceStarts = [];
         while (dayMarker < endMarker) {
-            var instanceStart 
+            var instanceStart
             // if everyday, or this particular day-of-week
             = void 0;
             // if everyday, or this particular day-of-week
@@ -8597,7 +8597,7 @@ var FullCalendar = (function (exports) {
             var shrinkCell = shrinkCells_1[_i];
             largestWidth = Math.max(largestWidth, computeSmallestCellWidth(shrinkCell));
         }
-        return Math.ceil(largestWidth); // <table> elements work best with integers. round up to ensure contents fits
+        return Math.ceil(largestWidth); // <table> elements work best with integers. round up to ensure content fits
     }
     function getSectionHasLiquidHeight(props, sectionConfig) {
         return props.liquid && sectionConfig.liquid; // does the section do liquid-height? (need to have whole scrollgrid liquid-height as well)
@@ -11912,7 +11912,7 @@ var FullCalendar = (function (exports) {
                     /*
                     known bug: events that are force to be list-item but span multiple days still take up space in later columns
                     */
-                    nodes.push(createElement("div", { className: 'fc-daygrid-event-harness' + (isAbsolute ? ' fc-daygrid-event-harness-abs' : ''), key: instanceId, 
+                    nodes.push(createElement("div", { className: 'fc-daygrid-event-harness' + (isAbsolute ? ' fc-daygrid-event-harness-abs' : ''), key: instanceId,
                         // in print mode when in mult cols, could collide
                         ref: isMirror ? null : this.segHarnessRefs.createRef(instanceId + ':' + seg.firstCol), style: {
                             visibility: isInvisible ? 'hidden' : '',
@@ -13219,7 +13219,7 @@ var FullCalendar = (function (exports) {
             if (!slatCoords) {
                 return null;
             }
-            return segs.map(function (seg, i) { return (createElement(NowIndicatorRoot, { isAxis: false, date: date, 
+            return segs.map(function (seg, i) { return (createElement(NowIndicatorRoot, { isAxis: false, date: date,
                 // key doesn't matter. will only ever be one
                 key: i }, function (rootElRef, classNames, innerElRef, innerContent) { return (createElement("div", { ref: rootElRef, className: ['fc-timegrid-now-indicator-line'].concat(classNames).join(' '), style: { top: slatCoords.computeDateTop(seg.start, date) } }, innerContent)); })); });
         };

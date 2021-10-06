@@ -991,7 +991,7 @@
                     .addClass(this.classes.disabledButton);
             }
             $(this.dom.searchBox).appendTo(this.dom.searchCont);
-            // Create the contents of the searchCont div. Worth noting that this function will change when using semantic ui
+            // Create the content of the searchCont div. Worth noting that this function will change when using semantic ui
             this._searchContSetup();
             // If the clear button is allowed to show then display it
             if (this.c.clear && this.c.controls && colOpts.controls) {
@@ -1265,7 +1265,7 @@
             }
         };
         /**
-         * Creates the contents of the searchCont div
+         * Creates the content of the searchCont div
          *
          * NOTE This is overridden when semantic ui styling in order to integrate the search button into the text box.
          */

@@ -160,7 +160,7 @@
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 		 * Public
 		 */
-		
+
 		/**
 		 * Destroy the control
 		 */
@@ -292,7 +292,7 @@
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 		 * Constructor
 		 */
-		
+
 		/**
 		 * Build the control and assign initial event handlers
 		 *
@@ -603,7 +603,7 @@
 		 * @private
 		 */
 		_daysInMonth: function ( year, month ) {
-			// 
+			//
 			var isLeap = ((year % 4) === 0 && ((year % 100) !== 0 || (year % 400) === 0));
 			var months = [31, (isLeap ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -712,7 +712,7 @@
 
 		/**
 		 * Create the HTML for a month to be displayed in the calendar table.
-		 * 
+		 *
 		 * Based upon the logic used in Pikaday - MIT licensed
 		 * Copyright (c) 2014 David Bushell
 		 * https://github.com/dbushell/Pikaday
@@ -852,7 +852,7 @@
 
 				return i18n.weekdays[day];
 			};
-			
+
 			// Empty cell in the header
 			if ( this.c.showWeekNumber ) {
 				a.push( '<th></th>' );
@@ -874,7 +874,7 @@
 		 * @param  {integer} d Day of month
 		 * @param  {integer} m Month of year (zero index)
 		 * @param  {integer} y Year
-		 * @return {string}   
+		 * @return {string}
 		 * @private
 		 */
 		_htmlWeekOfYear: function ( d, m, y ) {
@@ -977,7 +977,7 @@
 				var selected = val === value || (value === 'am' && val < 12) || (value === 'pm' && val >= 12) ?
 					'selected' :
 					'';
-				
+
 				if (allowed && $.inArray(value, allowed) === -1) {
 					selected += ' disabled';
 				}
@@ -996,7 +996,7 @@
 			if ( count === 12 ) {
 				// Hours with AM/PM
 				a += '<tr>';
-				
+
 				for ( i=1 ; i<=6 ; i++ ) {
 					a += button(i, render(i));
 				}
@@ -1034,7 +1034,7 @@
 					a += button(j, render(j), 'range');
 				}
 				a += '</tr>';
-				
+
 				// Slight hack to allow for the different number of columns
 				a += '</tbody></thead><table class="'+className+' '+className+'-nospace"><tbody>';
 
@@ -1232,7 +1232,7 @@
 		/**
 		 * Show the widget and add events to the document required only while it
 		 * is displayed
-		 * 
+		 *
 		 * @private
 		 */
 		_show: function () {
@@ -1308,7 +1308,7 @@
 				this.dom.input
 					.val( out )
 					.trigger('change', {write: date});
-			
+
 			if ( this.dom.input.attr('type') === 'hidden' ) {
 				this.val(out, false);
 			}
@@ -3357,7 +3357,7 @@
 	                this.s.criteria[i].criteria.s.index = i;
 	                // Add the sub group to the group
 	                $$1(this.s.criteria[i].criteria.dom.container).insertBefore(this.dom.add);
-	                // Redraw the contents of the group
+	                // Redraw the content of the group
 	                crit.redrawContents();
 	                this._setGroupListeners(crit);
 	            }

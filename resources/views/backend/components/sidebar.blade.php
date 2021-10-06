@@ -98,7 +98,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/backend/office-image/index" class="nav-link">
+                    <a href="/backend/officeImage/index" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Office Images

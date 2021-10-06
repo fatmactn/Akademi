@@ -1,3 +1,4 @@
+
 @extends('backend.layouts.app')
 
 @section('content')
@@ -45,7 +46,7 @@
                                 <td>{{$form->id}}</td>
                                 <td>{{$form->nameSurname}}</td>
                                 <td>{{$form->mail}}</td>
-                                <td><a href="#"> Cv
+                                <td><a href="{{asset($form->resumePath)}}" target="_blank"> Cv
                                         <i class="fa fa-file"></i>
                                     </a> </td>
                                 <td><a href="https://www.linkedin.com/in/{{$form->linkedinUrl}}" target="_blank">{{$form->linkedinUrl}}</a> </td>
@@ -67,3 +68,20 @@
     </div>
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

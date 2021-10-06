@@ -1,14 +1,14 @@
 /*!
- * 
+ *
  * Super simple wysiwyg editor v0.8.18
  * https://summernote.org
- * 
- * 
+ *
+ *
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license.
- * 
+ *
  * Date: 2020-05-20T16:47Z
- * 
+ *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -2055,7 +2055,7 @@ function dom_value($node, stripLinebreaks) {
 /**
  * @method html
  *
- * get the HTML contents of node
+ * get the HTML content of node
  *
  * @param {jQuery} $node
  * @param {Boolean} [isNewlineOnBlock]
@@ -2980,7 +2980,7 @@ var range_WrappedRange = /*#__PURE__*/function () {
       return new WrappedRange(boundaryPoints.sc, boundaryPoints.so, boundaryPoints.ec, boundaryPoints.eo);
     }
     /**
-     * delete contents on range
+     * delete content on range
      * @return {WrappedRange}
      */
 
@@ -3596,7 +3596,7 @@ var KEY_MAP = {
 /**
  * @method readFileAsDataURL
  *
- * read contents of file as representing URL
+ * read content of file as representing URL
  *
  * @param {File} file
  * @return {Promise} - then: dataUrl
@@ -6235,7 +6235,7 @@ var Editor_Editor = /*#__PURE__*/function () {
       }
     }
     /**
-     * returns whether contents is empty or not.
+     * returns whether content is empty or not.
      * @return {Boolean}
      */
 
@@ -6245,7 +6245,7 @@ var Editor_Editor = /*#__PURE__*/function () {
       return dom.isEmpty(this.$editable[0]) || dom.emptyPara === this.$editable.html();
     }
     /**
-     * Removes all contents and restores the editable instance to an _emptyPara_.
+     * Removes all content and restores the editable instance to an _emptyPara_.
      */
 
   }, {

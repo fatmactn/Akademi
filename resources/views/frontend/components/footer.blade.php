@@ -1,3 +1,4 @@
+
 <footer class="text-off-white" id="questions-section">
     <div class="footer-top">
         <div class="container">
@@ -16,39 +17,20 @@
 
                 <div class="col-sm-12 col-md-12">
                     <h4>Sıkça Sorulan Sorular</h4>
+                    @foreach($questions as $question)
+                        @if($question->status==1)
                     <div>
-                        <input type="radio" name="example_accordion" id="section1" class="accordion__input">
-                        <label for="section1" class="accordion__label">- Soru 1</label>
+                        <input type="radio" name="example_accordion" id="{{$question->id}}" class="accordion__input">
+                        <label for="{{$question->id}}" class="accordion__label">- {{$question->question}}</label>
                         <div class="accordion__content">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sit reiciendis, ipsam quaerat,
-                                aperiam perspiciatis ad ullam architecto impedit natus illo nostrum molestias voluptas earum a
-                                voluptatibus fugiat fuga facere!
+                                {{$question->answer}}
                             </p>
                         </div>
                     </div>
-                    <div>
-                        <input type="radio" name="example_accordion" id="section2" class="accordion__input">
-                        <label for="section2" class="accordion__label">- Soru 2</label>
-                        <div class="accordion__content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sit reiciendis, ipsam quaerat,
-                                aperiam perspiciatis ad ullam architecto impedit natus illo nostrum molestias voluptas earum a
-                                voluptatibus fugiat fuga facere!
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <input type="radio" name="example_accordion" id="section3" class="accordion__input">
-                        <label for="section3" class="accordion__label">- Soru 3</label>
-                        <div class="accordion__content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sit reiciendis, ipsam quaerat,
-                                aperiam perspiciatis ad ullam architecto impedit natus illo nostrum molestias voluptas earum a
-                                voluptatibus fugiat fuga facere!
-                            </p>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
+
                     <div class="extra-space-l"></div>
                     <center><button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" style="width:200px;">DAHA FAZLA SORU</button></center>
                     <div class="extra-space-l"></div>
@@ -88,22 +70,35 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="contact-form">
-                            <h4>Bize Ulaşın</h4>
-                            <form role="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-lg" placeholder="Adınız :" required>
+                        <div class="apply-form">
+                            <form role="form" action="{{route('frontend.contactForm.store')}}" method="POST">
+                                @csrf
+                                <div class="form-group ">
+                                    <input type="text" name="name" class="form-control input-lg text-white" placeholder="Adınız :" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control input-lg" placeholder="E-mailiniz :" required>
+                                    <input type="email" name="mail" class="form-control input-lg text-white" placeholder="E-mailiniz :"
+                                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-lg" placeholder="Konu :" required>
+                                    <input type="text" name="subject" class="form-control input-lg text-white" placeholder="Konu :">
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control input-lg" rows="5" placeholder="Mesajınız :" required></textarea>
+                                    <input type="text" name="message" class="form-control input-lg text-white" placeholder="Mesajınız :">
                                 </div>
-                                <button type="submit" class="btn wow bounceInRight" style="color:white;" data-wow-delay="0.8s">GÖNDER</button>
+                                <br>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk1"/>
+                                    <label class="form-check-label" for="flexCheckChecked">
+
+                                        <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="text-white" target="_blank">Kvkk yı kabul et </a>
+                                    </label>
+                                </div>
+                                <div class="extra-space-l"></div>
+                                <button type="submit" class="btn wow bounceInRight" id="submitButton1" data-wow-delay="0.8s"
+                                        style="background-color:#363940;">GÖNDER
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -123,3 +118,5 @@
     </div>
 
 </footer>
+
+

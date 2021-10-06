@@ -62,19 +62,3 @@
     </div>
 </section>
 
-<script>
-    $( document ).ready(function() {
-        if(!$('#isKvkk').is('checked')){
-            $('#submitButton').addClass('disabled')
-        }
-    });
-
-
-    $('#isKvkk').change(function () {
-        if(this.checked){
-            $('#submitButton').removeClass('disabled')
-        } else {
-            $('#submitButton').addClass('disabled')
-        }
-    })
-</script>

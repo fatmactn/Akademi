@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
+    public function index(){
+        return view('frontend.components.form');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -31,7 +35,7 @@ class FormController extends Controller
             $fileModel->resumePath = '/storage/' . $filePath;
             $fileModel->save();
 
-            return redirect()->route('frontend.form.index')->withSuccess('Başvurunuz Kaydedildi.');
+            return redirect()->route('frontend.home.index')->withSuccess('Başvurunuz Kaydedildi.');
         }
 
         //Form::create([

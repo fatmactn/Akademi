@@ -19,6 +19,7 @@ class CreateContactFormsTable extends Migration
             $table->string('mail');
             $table->string('subject');
             $table->longText('message');
+            $table->boolean('isKvkk')->default(0);
             $table->timestamps();
         });
     }

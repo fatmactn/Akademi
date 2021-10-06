@@ -24,8 +24,8 @@ Route::get('/register', [\App\Http\Controllers\Backend\RegisterController::class
 Route::post('/register', [\App\Http\Controllers\Backend\RegisterController::class, 'register'])->name('backend.register.register');
 
 
-Route::get('frontend1/form/index', [\App\Http\Controllers\Frontend\FormController::class, 'create'])->name('frontend.form.index');
-Route::post('frontend1/form/store',[\App\Http\Controllers\Frontend\FormController::class, 'store'])->name('frontend.form.store');
+Route::get('/index', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.home.index');
+Route::post('form/store',[\App\Http\Controllers\Frontend\FormController::class, 'store'])->name('frontend.form.store');
 
 Route::get('/',function (){
     return view('frontend.index');

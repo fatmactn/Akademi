@@ -5304,17 +5304,17 @@ S2.define('select2/options',[
       var prefix = 'data-';
 
       if (attributeName.substr(0, prefix.length) == prefix) {
-        // Get the contents of the attribute after `data-`
+        // Get the content of the attribute after `data-`
         var dataName = attributeName.substring(prefix.length);
 
-        // Get the data contents from the consistent source
+        // Get the data content from the consistent source
         // This is more than likely the jQuery data helper
         var dataValue = Utils.GetData($e[0], dataName);
 
         // camelCase the attribute name to match the spec
         var camelDataName = dataName.replace(/-([a-z])/g, upperCaseLetter);
 
-        // Store the data attribute contents into the dataset since
+        // Store the data attribute content into the dataset since
         dataset[camelDataName] = dataValue;
       }
     }

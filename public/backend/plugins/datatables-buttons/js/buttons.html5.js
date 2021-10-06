@@ -483,7 +483,7 @@ function _createNode( doc, nodeName, opts ) {
 }
 
 /**
- * Get the width for an Excel column based on the contents of that column
+ * Get the width for an Excel column based on the content of that column
  * @param  {object} data Data for export
  * @param  {int}    col  Column index
  * @return {int}         Column width
@@ -1181,13 +1181,13 @@ DataTable.ext.buttons.excelHtml5 = {
 			addRow( data.header, rowPos );
 			$('row:last c', rels).attr( 's', '2' ); // bold
 		}
-	
+
 		dataStartRow = rowPos;
 
 		for ( var n=0, ie=data.body.length ; n<ie ; n++ ) {
 			addRow( data.body[n], rowPos );
 		}
-	
+
 		dataEndRow = rowPos;
 
 		if ( config.footer && data.footer ) {

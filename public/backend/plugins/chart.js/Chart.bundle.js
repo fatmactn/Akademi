@@ -1532,7 +1532,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -2392,7 +2392,7 @@ var helpers = {
 	},
 
 	/**
-	 * Applies the contents of two or more objects together into the first object.
+	 * Applies the content of two or more objects together into the first object.
 	 * @param {object} target - The target object in which all objects are merged into.
 	 * @param {object} arg1 - Object containing additional properties to merge in target.
 	 * @param {object} argN - Additional objects containing properties to merge in target.

@@ -67,7 +67,7 @@
   // The actual plugin constructor
   function BootstrapDualListbox(element, options) {
     this.element = $(element);
-    // jQuery has an extend method which merges the contents of two or
+    // jQuery has an extend method which merges the content of two or
     // more objects, storing the result in the first object. The first object
     // is generally empty as we don't want to alter the default options for
     // future instances of the plugin

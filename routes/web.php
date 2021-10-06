@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,24 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+  //  return view('welcome');
+//});
 
 Route::get('/login', [\App\Http\Controllers\Backend\LoginController::class, 'index'])->name('backend.login.index');
 Route::post('/login', [\App\Http\Controllers\Backend\LoginController::class, 'login'])->name('backend.login.login');
 Route::get('/register', [\App\Http\Controllers\Backend\RegisterController::class, 'index'])->name('backend.register.index');
 Route::post('/register', [\App\Http\Controllers\Backend\RegisterController::class, 'register'])->name('backend.register.register');
-Route::get('/logout', [\App\Http\Controllers\Backend\LoginController::class, 'logout'])->middleware('auth')->name('backend.login.logout');
 
-/*
-Route::middleware('auth')->group(function () {
-    Route::get('/backend/home/index', [\App\Http\Controllers\Backend\HomeController::class, 'index'])->name('backend.home.index');
-    Route::get('/backend/question/index', [\App\Http\Controllers\Backend\QuestionController::class, 'index'])->name('backend.question.index');
-});*/
+
+Route::get('/index', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.home.index');
+Route::post('form/store',[\App\Http\Controllers\Frontend\FormController::class, 'store'])->name('frontend.form.store');
+
+Route::get('/',function (){
+    return view('frontend.index');
+});
 
 
 Route::group(['middleware' => ['auth']], function() {
+
+    Route::get('/logout', [\App\Http\Controllers\Backend\LoginController::class, 'logout'])->name('backend.login.logout');
+
     Route::get('/backend/home/index', [\App\Http\Controllers\Backend\HomeController::class, 'index'])->name('backend.home.index');
 
     Route::get('/backend/question/index', [\App\Http\Controllers\Backend\QuestionController::class, 'index'])->name('backend.question.index');
@@ -80,21 +85,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/backend/employee/{id}',[EmployeeController::class,'destroy'])->whereNumber('id')->name('backend.employee.destroy');
 
 
+    Route::get('/backend/contact-form/index', [\App\Http\Controllers\Backend\ContactFormController::class, 'index'])->name('backend.contact-form.index');
+    Route::get('/backend/contact-form/{id}',[\App\Http\Controllers\Backend\ContactFormController::class,'destroy'])->name('backend.contact-form.destroy');
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

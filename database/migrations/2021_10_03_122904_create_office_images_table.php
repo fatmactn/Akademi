@@ -17,6 +17,7 @@ class CreateOfficeImagesTable extends Migration
             $table->id();
             $table->string('imageUrl');
             $table->string('title');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

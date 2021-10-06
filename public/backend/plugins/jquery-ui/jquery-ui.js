@@ -6293,7 +6293,7 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 		if ( this.options.items.controlgroupLabel ) {
 			this.element
 				.find( this.options.items.controlgroupLabel )
-				.find( ".ui-controlgroup-label-contents" )
+				.find( ".ui-controlgroup-label-content" )
 				.contents().unwrap();
 		}
 	},
@@ -6317,11 +6317,11 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 				labels.each( function() {
 					var element = $( this );
 
-					if ( element.children( ".ui-controlgroup-label-contents" ).length ) {
+					if ( element.children( ".ui-controlgroup-label-content" ).length ) {
 						return;
 					}
 					element.contents()
-						.wrapAll( "<span class='ui-controlgroup-label-contents'></span>" );
+						.wrapAll( "<span class='ui-controlgroup-label-content'></span>" );
 				} );
 				that._addClass( labels, null, "ui-widget ui-widget-content ui-state-default" );
 				childWidgets = childWidgets.concat( labels.get() );
@@ -6581,7 +6581,7 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 		// input itself.
 		this.label.contents().not( this.element[ 0 ] ).each( function() {
 
-			// The label contents could be text, html, or a mix. We concat each element to get a
+			// The label content could be text, html, or a mix. We concat each element to get a
 			// string representation of the label, without the input as part of it.
 			that.originalLabel += this.nodeType === 3 ? $( this ).text() : this.outerHTML;
 		} );
@@ -6761,7 +6761,7 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 
 	_updateLabel: function() {
 
-		// Remove the contents of the label ( minus the icon, icon space, and input )
+		// Remove the content of the label ( minus the icon, icon space, and input )
 		var contents = this.label.contents().not( this.element[ 0 ] );
 		if ( this.icon ) {
 			contents = contents.not( this.icon[ 0 ] );
@@ -18473,7 +18473,7 @@ $.widget( "ui.tooltip", {
 
 		// Support: Voiceover on OS X, JAWS on IE <= 9
 		// JAWS announces deletions even when aria-relevant="additions"
-		// Voiceover will sometimes re-read the entire log region's contents from the beginning
+		// Voiceover will sometimes re-read the entire log region's content from the beginning
 		this.liveRegion.children().hide();
 		a11yContent = $( "<div>" ).html( tooltip.find( ".ui-tooltip-content" ).html() );
 		a11yContent.removeAttr( "name" ).find( "[name]" ).removeAttr( "name" );

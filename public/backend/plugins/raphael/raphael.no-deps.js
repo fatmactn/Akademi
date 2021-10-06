@@ -6571,7 +6571,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      o stroke-opacity (number)
      o stroke-width (number) stroke width in pixels, default is '1'
      o target (string) used with href
-     o text (string) contents of the text element. Use `\n` for multiline text
+     o text (string) content of the text element. Use `\n` for multiline text
      o text-anchor (string) [“`start`”, “`middle`”, “`end`”], default is “`middle`”
      o title (string) will create tooltip with a given text
      o transform (string) see @Element.transform

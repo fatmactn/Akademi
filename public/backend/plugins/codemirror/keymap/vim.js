@@ -1154,7 +1154,7 @@
                 // Delete less than 1 line. Update the small delete register.
                 this.registers['-'] = new Register(text, linewise);
               } else {
-                // Shift down the contents of the numbered registers and put the
+                // Shift down the content of the numbered registers and put the
                 // deleted text into register 1.
                 this.shiftNumericRegisters_();
                 this.registers['1'] = new Register(text, linewise);

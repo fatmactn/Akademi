@@ -52,7 +52,9 @@
     </header>
     <!-- ========= END HEADER =========-->
     <div class="extra-space-l"></div>
+    <!--/#home-carousel-->
     @include('frontend.components.slider')
+
     <!-- Begin about section -->
     @include('frontend.components.about')
     <!-- End about section -->

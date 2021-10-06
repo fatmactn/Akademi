@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('backend.officeImage.store') }}">
+                    <form method="POST" action="{{ route('backend.officeImage.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Fotoğraf Başlığı</label>
@@ -13,10 +13,10 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label>Fotoğraf Url</label>
-                            <textarea name="imageUrl" class="form-control" rows="4">{{ old('imageUrl') }}</textarea>
+                            <label>Fotoğraf</label>
+                            <input type="text"  class="form-control" value="{{ old('imageUrl')  }}" disabled>
+                            <span class="input-group-addon" id="basic-addon2"><input type="file" name="imageUrl" placeholder="Image :"></span>
                         </div>
-
 
                         <br>
                         <div class="form-group">

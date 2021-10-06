@@ -20,10 +20,21 @@ class OfficeImageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'imageUrl' => 'required'
+            'imageUrl' => 'required|mimes:jpg,jpeg'
         ]);
-        OfficeImage::create($request->post());
-        return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Kaydedildi.');
+
+        $fileModel = new OfficeImage;
+
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+
+            $fileModel->title = $request->title;
+            $fileModel->imageUrl = '/storage/' . $filePath;
+            $fileModel->save();
+
+            return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Kaydedildi.');
+        }
     }
 
     public function create()
@@ -49,18 +60,19 @@ class OfficeImageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'imageUrl' => 'required'
+            'imageUrl' => 'required|mimes:jpg,jpeg'
         ]);
 
 
-        $officeImage->update([
-            'title' => $request->title,
-            'imageUrl' => $request->imageUrl,
-            'status' => (isset($request->status) && ($request->status == 'on')) ? true:false,
-        ]);
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+            $officeImage->title = $request->title;
+            $officeImage->imageUrl = '/storage/' . $filePath;
+            $officeImage->save();
 
-
-        return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Güncellendi.');
+            return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Güncellendi.');
+        }
     }
 
     public function destroy($id)

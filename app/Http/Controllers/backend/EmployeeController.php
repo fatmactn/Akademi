@@ -22,19 +22,29 @@ class EmployeeController extends Controller
         return view('backend.employee.create');
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
             'nameSurname' => 'required',
             'degree' => 'required',
-            'imageUrl' => 'required',
+            'imageUrl' => 'required|mimes:jpg,jpeg',
             'linkedinUrl' => 'required',
-
         ]);
-        Employee::create($request->post());
+        $fileModel = new Employee;
 
-        return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Kaydedildi.');
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+
+            $fileModel->nameSurname = $request->nameSurname;
+            $fileModel->degree = $request->degree;
+            $fileModel->linkedinUrl = $request->linkedinUrl;
+            $fileModel->status = (isset($request->status) && ($request->status == 'on')) ? true : false;
+            $fileModel->imageUrl = '/storage/' . $filePath;
+            $fileModel->save();
+
+            return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Kaydedildi.');
+        }
     }
 
 
@@ -62,7 +72,24 @@ class EmployeeController extends Controller
             'linkedinUrl' => 'required',
         ]);
 
+        $fileModel = $employee;
 
+        if ($request->file())
+        {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+
+            $fileModel->nameSurname = $request->nameSurname;
+            $fileModel->degree = $request->degree;
+            $fileModel->linkedinUrl = $request->linkedinUrl;
+            $fileModel->status = (isset($request->status) && ($request->status == 'on')) ? true : false;
+            $fileModel->imageUrl = '/storage/' . $filePath;
+            $fileModel->save();
+
+            return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Güncellendi.');
+        }
+
+/*
         $employee->update([
             'nameSurname' => $request->nameSurname,
             'degree' => $request->degree,
@@ -70,8 +97,8 @@ class EmployeeController extends Controller
             'linkedinUrl' => $request->linkedinUrl,
             'status' => (isset($request->status) && ($request->status == 'on')) ? true:false,
         ]);
+        return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Güncellendi.');*/
 
-        return redirect()->route('backend.employee.index')->withSuccess('Soru Başarıyla Güncellendi.');
     }
 
 

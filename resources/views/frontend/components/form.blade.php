@@ -21,7 +21,7 @@
 
                 <div class="col-sm-6">
                     <div class="apply-form">
-                        <form role="form" action="{{route('frontend.form.store')}}" method="POST" enctype="multipart/form-data">
+                        <form role="form" action="{{route('frontend.contactForm.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group ">
                                 <input type="text" name="nameSurname" class="form-control input-lg text-white" placeholder="Adınız :" required>

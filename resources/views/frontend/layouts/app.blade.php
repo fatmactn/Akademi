@@ -72,7 +72,6 @@
     @include('frontend.components.team')
     <!-- End team-->
 
-    <div class="extra-space-l"></div>
     @include('frontend.components.form')
 
 

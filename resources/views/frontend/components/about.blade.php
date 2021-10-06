@@ -14,16 +14,21 @@
     <div class="rotate-box-1-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
-                        <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
-                        <div class="rotate-box-info">
-                            <h4>Servislet Akademi Nedir?</h4>
-                            <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                @foreach($contents as $content)
+                    @if($content->status == 1)
+                        <div class="col-md-6 col-sm-12">
+                            <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
+                                <span class="rotate-box-icon"><i class="fa fa-dot-circle-o"></i></span>
+                                <div class="rotate-box-info">
+                                    <h4>{{$content->title}}</h4>
+                                    <p>{{$content->content}}</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    @endif
+                @endforeach
 
+<!--
                 <div class="col-md-6 col-sm-12">
                     <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                         <span class="rotate-box-icon"><i class="fa fa-dot-circle-o"></i></span>
@@ -53,7 +58,7 @@
                         </div>
                     </a>
                 </div>
-
+-->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div>

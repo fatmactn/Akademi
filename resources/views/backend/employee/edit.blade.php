@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('backend.employee.update', ['employee' => $employee]) }}">
+                    <form method="POST" action="{{ route('backend.employee.update', ['employee' => $employee]) }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
                         <div class="form-group">
@@ -16,12 +16,13 @@
                             <label>degree</label>
                             <input type="text" name="degree" class="form-control" value="{{ $employee->degree }}">
                         </div>
-
-
                         <div class="form-group">
-                            <label>Resim adresi</label>
-                            <input type="text" name="imageUrl" class="form-control" value="{{ $employee->imageUrl }}">
+                            <label>Fotoğraf</label>
+                            <input type="text"  class="form-control" value="{{ old('imageUrl')  }}" disabled>
+                            <span class="input-group-addon" id="basic-addon2">
+                                <input type="file" name="imageUrl" placeholder="Image :"></span>
                         </div>
+
                         <div class="form-group">
                             <label>Lİnkedin Linki</label>
                             <input type="text" name="linkedinUrl" class="form-control" value="{{ $employee->linkedinUrl }}">
@@ -29,7 +30,7 @@
 
                         <div class="form-group">
                             <input id="isEnable" name="status" @if($employee->status) checked @endif type="checkbox">
-                            <label>Yayınlanacak mı? </label>
+                            <label>Mezun mu? </label>
                         </div>
                         <br>
                         <div class="form-group">

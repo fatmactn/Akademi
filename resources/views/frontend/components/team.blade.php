@@ -20,12 +20,17 @@
                         <div class="team-item">
                             <div class="team-triangle">
                                 <div class="content">
-                                    <img src="{{asset($employee->imageUrl)}}" alt="title"/>
+                                    <a href="https://www.linkedin.com/in/{{$employee->linkedinUrl}}" target="_blank">
+                                    <img src="{{url($employee->imageUrl)}}" alt="title"/>
                                     <div class="team-hover text-center">
                                         <i class="fa fa-user"></i>
                                         <p>{{$employee->nameSurname}} </p>
                                         <p>{{$employee->degree}}</p>
+                                        @if($employee->status == 1)
+                                            <p style="font-size: 10px;">Akademi Mezunu</p>
+                                        @endif
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

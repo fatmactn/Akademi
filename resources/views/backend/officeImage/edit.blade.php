@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('backend.officeImage.update', ['officeImage' => $officeImage]) }}">
+                    <form method="POST" action="{{ route('backend.officeImage.update', ['officeImage' => $officeImage]) }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
                         <div class="form-group">
@@ -14,14 +14,12 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label>Url</label>
-                            <textarea name="imageUrl" class="form-control" rows="4">{{ $officeImage->imageUrl }}</textarea>
+                            <label>Fotoğraf</label>
+                            <input type="text"  class="form-control" value="{{ $officeImage->imageUrl }}" disabled>
+                            <span class="input-group-addon" id="basic-addon2">
+                                <input type="file" name="imageUrl" placeholder="Image :"></span>
                         </div>
                         <br>
-                        <div class="form-group">
-                            <input id="isEnable" name="status" @if($officeImage->status) checked @endif type="checkbox">
-                            <label>Yayınlanacak mı? </label>
-                        </div>
                         <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-sm btn-block"> Güncelle</button>

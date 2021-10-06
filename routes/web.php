@@ -24,13 +24,8 @@ Route::get('/register', [\App\Http\Controllers\Backend\RegisterController::class
 Route::post('/register', [\App\Http\Controllers\Backend\RegisterController::class, 'register'])->name('backend.register.register');
 
 
-Route::get('/index', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.home.index');
-Route::post('form/store',[\App\Http\Controllers\Frontend\FormController::class, 'store'])->name('frontend.form.store');
-
-Route::get('/',function (){
-    return view('frontend.index');
-});
-
+Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.home.index');
+Route::post('/',[\App\Http\Controllers\Frontend\ContactFormController::class, 'store'])->name('frontend.contactForm.store');
 
 Route::group(['middleware' => ['auth']], function() {
 

@@ -106,7 +106,6 @@ class QuestionController extends Controller
                     'message' => $id . ' Değişkeni başarıyla güncellendi.'
                 ],200);
             }
-
         }
         catch (\Exception $exception)
         {

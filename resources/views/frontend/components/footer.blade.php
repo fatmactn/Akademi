@@ -70,15 +70,17 @@
                                 <ul class="contact-address">
                                     <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; {{$contact->address}}
                                         <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="{{$contact->mapUrl}}" class="text-dark" target="_blank">
                                         <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s">
-                                            <a href="{{$contact->mapUrl}}" class="text-dark">Konumu Gör</a>
+                                           Konumu Gör
                                         </button>
+                                        </a>
                                     </li>
                                     <br>
-                                    <li><i class="fa fa-phone"></i>&nbsp;<a href="tel:+908503020502" style="color:white;">
+                                    <li><i class="fa fa-phone"></i>&nbsp;<a href="tel: {{$contact->phone}}" style="color:white;">
                                             {{$contact->phone}}</a></li>
                                     <br>
-                                    <li><i class="fa fa-envelope"></i><a href="mailto:destek@servislet.com"
+                                    <li><i class="fa fa-envelope"></i><a href="mailto:{{$contact->mail}}"
                                                                          style="color:white;"> &nbsp;&nbsp;{{$contact->mail}}</a>
                                     </li>
                                 </ul>

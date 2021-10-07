@@ -24,12 +24,12 @@
 
                                         <div class="col-xs-12 col-sm-4 ">
                                             <div class="portfolio_single_content">
-                                                <img src="{{url($officeImage->imageUrl)}}" alt="{{$officeImage->title}}" height="400"
-                                                     width="600"/>
-                                                <div>
-                                                    <a href="#">{{$officeImage->content}}</a>
-                                                    <span></span>
-                                                </div>
+                                                <a data-fancybox="gallery" href="{{url($officeImage->imageUrl)}}"><img
+                                                        src="{{url($officeImage->imageUrl)}}"/>
+                                                    <div>
+                                                        <p>{{$officeImage->content}}</p>
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
                                     @endif

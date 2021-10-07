@@ -24,7 +24,15 @@
         <div class="card-body">
             <p class="login-box-msg">Oturum açmak için giriş yapınız.</p>
 
-            <form action="{{ route('backend.login.login') }}" method="post">@csrf
+            <form action="{{ route('backend.login.login') }}" method="post">
+                @csrf
+                <div class="results">
+                    @if(\Illuminate\Support\Facades\Session::get('fail'))
+                        <div class="alert alert-danger">
+                            {{\Illuminate\Support\Facades\Session::get('fail')}}
+                        </div>
+                    @endif
+                </div>
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" placeholder="Email" name="email" id="email">
                     <div class="input-group-append">

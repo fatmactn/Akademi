@@ -25,7 +25,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('backend.home.index');
         } else {
-            return redirect()->route('backend.login.index');
+            return redirect()->route('backend.login.index')->with('fail','Yetkiniz yok.');
         }
     }
 

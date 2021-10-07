@@ -15,7 +15,7 @@ class OfficeImageController extends Controller
             $officeImageApi = OfficeImage::all();
             return response([
                 'status' => 'success',
-                'questions' => $officeImageApi
+                'officeImages' => $officeImageApi
             ],200);
         }catch (\Exception $exception){
             return response([
@@ -31,7 +31,7 @@ class OfficeImageController extends Controller
             if($officeImage = OfficeImage::create($request->except('_token'))){
                 return response([
                     'status' => 'success',
-                    'question' => $officeImage
+                    'officeImages' => $officeImage
                 ]);
             }
         }
@@ -58,7 +58,7 @@ class OfficeImageController extends Controller
             else{
                 return response([
                     'status' => 'success',
-                    'question' => OfficeImage::find($id)
+                    'officeImages' => OfficeImage::find($id)
                 ],200);
             }
         }

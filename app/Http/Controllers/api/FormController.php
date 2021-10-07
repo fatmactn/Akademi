@@ -14,7 +14,7 @@ class FormController extends Controller
             $Formapi = Form::all();
             return response([
                 'status' => 'success',
-                'questions' => $Formapi
+                'forms' => $Formapi
             ],200);
         }catch (\Exception $exception){
             return response([
@@ -27,10 +27,10 @@ class FormController extends Controller
     public function create(Request $request)
     {
         try {
-            if($officeImage = Form::create($request->except('_token'))){
+            if($Formapi = Form::create($request->except('_token'))){
                 return response([
                     'status' => 'success',
-                    'question' => $officeImage
+                    'forms' => $Formapi
                 ]);
             }
         }
@@ -57,7 +57,7 @@ class FormController extends Controller
             else{
                 return response([
                     'status' => 'success',
-                    'question' => Form::find($id)
+                    'forms' => Form::find($id)
                 ],200);
             }
         }

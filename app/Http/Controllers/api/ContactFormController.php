@@ -14,7 +14,7 @@ class ContactFormController extends Controller
             $officeImageApi = ContactForm::all();
             return response([
                 'status' => 'success',
-                'questions' => $officeImageApi
+                'contactForms' => $officeImageApi
             ],200);
         }catch (\Exception $exception){
             return response([
@@ -30,7 +30,7 @@ class ContactFormController extends Controller
             if($officeImage = ContactForm::create($request->except('_token'))){
                 return response([
                     'status' => 'success',
-                    'question' => $officeImage
+                    'contactForms' => $officeImage
                 ]);
             }
         }
@@ -57,7 +57,7 @@ class ContactFormController extends Controller
             else{
                 return response([
                     'status' => 'success',
-                    'question' => ContactForm::find($id)
+                    'contactForms' => ContactForm::find($id)
                 ],200);
             }
         }

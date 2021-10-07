@@ -22,7 +22,7 @@
                                 @foreach($officeImages as $officeImage)
                                     <div class="col-xs-12 col-sm-4 ">
                                         <div class="portfolio_single_content">
-                                            <img src="{{url($officeImage->imageUrl)}}" alt="title"/>
+                                            <img src="{{url($officeImage->imageUrl)}}" alt="title"  height="400" width="600" />
                                             <div>
                                                 <a href="#">{{$officeImage->title}}</a>
                                                 <span></span>

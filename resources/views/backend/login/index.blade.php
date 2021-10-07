@@ -19,10 +19,10 @@
 
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="/" class="h1"><b>Servislet</b>Admin</a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Oturum açmak için giriş yapınız.</p>
 
             <form action="{{ route('backend.login.login') }}" method="post">@csrf
                 <div class="input-group mb-3">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+                    <input type="password" class="form-control" placeholder="Şifre" name="password" id="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -44,24 +44,18 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">
-                                Remember Me
-                            </label>
+
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
                     </div>
                 </div>
             </form>
 
-            <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
-            </p>
             <p class="mb-0">
-                <a href="/register" class="text-center">Register a new membership</a>
+                <a href="/register" class="text-center">Yeni kullanıcı oluştur</a>
             </p>
         </div>
         <!-- /.card-body -->

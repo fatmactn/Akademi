@@ -39,6 +39,7 @@
                         <tr>
                             <th scope="col">ID </th>
                             <th scope="col">Başlık </th>
+                            <th scope="col">İçerik </th>
                             <th scope="col">Fotoğraf</th>
                             <th scope="col">Durum</th>
                             <th scope="col">İşlemler</th>
@@ -49,6 +50,7 @@
                             <tr>
                                 <td>{{$officeImage->id}}</td>
                                 <td>{{$officeImage->title}}</td>
+                                <td>{{$officeImage->content}}</td>
                                 <td> <img src="{{url($officeImage->imageUrl)}}" width="600" height="300" alt="Image"/></td>
                                 <td>{{$officeImage->status}}</td>
                                 <td>

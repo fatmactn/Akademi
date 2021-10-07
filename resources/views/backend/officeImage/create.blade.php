@@ -13,6 +13,10 @@
                         </div>
                         <br>
                         <div class="form-group">
+                            <label>İçerik</label>
+                            <textarea name="content" class="form-control" rows="4">{{ old('content') }}</textarea>
+                        </div>
+                        <div class="form-group">
                             <label>Fotoğraf</label>
                             <input type="text"  class="form-control" value="{{ old('imageUrl')  }}" disabled>
                             <span class="input-group-addon" id="basic-addon2"><input type="file" name="imageUrl" placeholder="Image :"></span>

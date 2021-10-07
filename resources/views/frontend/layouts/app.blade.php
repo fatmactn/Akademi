@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	Template:	 Unika - Responsive One Page HTML5 Template
+	Template:	 Servislet - Responsive One Page HTML5 Template
 	Author:		 imransdesign.com
 	URL:		 http://imransdesign.com/
     Designed By: https://www.behance.net/poljakova
@@ -10,10 +10,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Unika - Responsive One Page HTML5 Template</title>
-    <meta name="description" content="Unika - Responsive One Page HTML5 Template">
-    <meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
-    <meta name="author" content="imransdesign.com">
+    <title>Servislet Akademi</title>
+    <meta name="description" content="Servislet Akademi">
+    <meta name="keywords" content="Akademi" />
+    <meta name="author" content="servislet.com">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">

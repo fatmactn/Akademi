@@ -14,8 +14,16 @@
                         </div>
                         <br>
                         <div class="form-group">
+                            <label>İçerik</label>
+                            <input type="text" name="content" class="form-control" value="{{ $officeImage->content }}">
+                        </div>
+                        <br>
+                        <div class="form-group">
                             <label>Fotoğraf</label>
-                            <input type="text"  class="form-control" value="{{ $officeImage->imageUrl }}" disabled>
+                            <img src="{{$officeImage->imageUrl}}" height="200"
+                                 width="200">
+                            <br>
+                            <br>
                             <span class="input-group-addon" id="basic-addon2">
                                 <input type="file" name="imageUrl" placeholder="Image :"></span>
                         </div>

@@ -30,6 +30,7 @@ class OfficeImageController extends Controller
             $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
 
             $fileModel->title = $request->title;
+            $fileModel->content = $request->get('content');
             $fileModel->imageUrl = '/storage/' . $filePath;
             $fileModel->save();
 
@@ -60,19 +61,18 @@ class OfficeImageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'imageUrl' => 'required|mimes:jpg,jpeg'
         ]);
-
-
+        $officeImage->title = $request->title;
+        $officeImage->content = $request->get('content');
         if ($request->file()) {
             $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
             $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
-            $officeImage->title = $request->title;
             $officeImage->imageUrl = '/storage/' . $filePath;
-            $officeImage->save();
-
-            return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Güncellendi.');
         }
+        $officeImage->save();
+
+        return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Güncellendi.');
+
     }
 
     public function destroy($id)

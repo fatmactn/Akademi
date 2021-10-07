@@ -16,19 +16,23 @@
                         </div>
                     </div>
                     <!-- End page header-->
-                    <div class="portfoloi_content_area" >
+                    <div class="portfoloi_content_area">
                         <div class="portfolio_content">
-                            <div class="row"  id="portfolio">
+                            <div class="row" id="portfolio">
                                 @foreach($officeImages as $officeImage)
-                                    <div class="col-xs-12 col-sm-4 ">
-                                        <div class="portfolio_single_content">
-                                            <img src="{{url($officeImage->imageUrl)}}" alt="title"  height="400" width="600" />
-                                            <div>
-                                                <a href="#">{{$officeImage->title}}</a>
-                                                <span></span>
+                                    @if($officeImage->content)
+
+                                        <div class="col-xs-12 col-sm-4 ">
+                                            <div class="portfolio_single_content">
+                                                <img src="{{url($officeImage->imageUrl)}}" alt="{{$officeImage->title}}" height="400"
+                                                     width="600"/>
+                                                <div>
+                                                    <a href="#">{{$officeImage->content}}</a>
+                                                    <span></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endforeach
                             </div>
                         </div>

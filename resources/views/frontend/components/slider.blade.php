@@ -13,7 +13,7 @@
                                             {{$image->title}}
                                         </h2></center>
                                     <center><a class="btn btn-blank" href="#apply-section" role="button">Şimdi Başvur
-                                            &nbsp <i class="fa fa-arrow-right"></i></a></center>
+                                            &nbsp <i class="fa fa-angle-right"></i></a></center>
                                 </div>
                             </div>
                         </div>

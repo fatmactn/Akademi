@@ -41,12 +41,15 @@
                             </div>
                             <br>
                             <div class="form-check">
+                                <div class="kvk">
                                 <input
                                     class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk"/>
                                 <label class="form-check-label" for="flexCheckChecked">
 
-                                    <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="text-white" target="_blank">Kvkk yı kabul et </a>
+                                    <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
+                                        Ediyorum </a>
                                 </label>
+                                </div>
                             </div>
                             <div class="extra-space-l"></div>
                             <button type="submit" class="btn wow bounceInRight" id="submitButton" data-wow-delay="0.8s"

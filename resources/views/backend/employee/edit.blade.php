@@ -18,7 +18,8 @@
                         </div>
                         <div class="form-group">
                             <label>Fotoğraf</label>
-                            <input type="text"  class="form-control" value="{{ old('imageUrl')  }}" disabled>
+                            <img src="{{$employee->imageUrl}}" height="200"
+                                 width="200">
                             <span class="input-group-addon" id="basic-addon2">
                                 <input type="file" name="imageUrl" placeholder="Image :"></span>
                         </div>

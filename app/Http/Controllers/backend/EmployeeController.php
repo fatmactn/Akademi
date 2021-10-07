@@ -68,37 +68,20 @@ class EmployeeController extends Controller
         $request->validate([
             'nameSurname' => 'required',
             'degree' => 'required',
-            'imageUrl' => 'required',
             'linkedinUrl' => 'required',
         ]);
-
-        $fileModel = $employee;
-
-        if ($request->file())
-        {
+        $employee->nameSurname = $request->nameSurname;
+        $employee->degree = $request->degree;
+        $employee->linkedinUrl = $request->linkedinUrl;
+        $employee->status = (isset($request->status) && ($request->status == 'on')) ? true : false;
+        if ($request->file()) {
             $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
             $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
-
-            $fileModel->nameSurname = $request->nameSurname;
-            $fileModel->degree = $request->degree;
-            $fileModel->linkedinUrl = $request->linkedinUrl;
-            $fileModel->status = (isset($request->status) && ($request->status == 'on')) ? true : false;
-            $fileModel->imageUrl = '/storage/' . $filePath;
-            $fileModel->save();
-
-            return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Güncellendi.');
+            $employee->imageUrl = '/storage/' . $filePath;
         }
+        $employee->save();
 
-/*
-        $employee->update([
-            'nameSurname' => $request->nameSurname,
-            'degree' => $request->degree,
-            'imageUrl' => $request->imageUrl,
-            'linkedinUrl' => $request->linkedinUrl,
-            'status' => (isset($request->status) && ($request->status == 'on')) ? true:false,
-        ]);
-        return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Güncellendi.');*/
-
+        return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Güncellendi.');
     }
 
 

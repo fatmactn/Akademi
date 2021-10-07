@@ -18,24 +18,23 @@
                 <div class="col-sm-12 col-md-12">
                     <center><h4>Sıkça Sorulan Sorular</h4></center>
                     @foreach($questions as $key => $question)
-                        @if($key<3)
-                            <div>
-                                <input type="radio" name="example_accordion" id="{{$question->id}}"
-                                       class="accordion__input">
-                                <label for="{{$question->id}}"
-                                       class="accordion__label">- {{$question->question}}</label>
-                                <div class="accordion__content">
-                                    <p>
-                                        {{$question->answer}}
-                                    </p>
-                                </div>
+                        <div id="soru-{{$key}}" style="display:{{$key > 2 ? 'none': 'block'}}">
+                            <input type="radio" name="example_accordion" id="{{$question->id}}"
+                                   class="accordion__input">
+                            <label for="{{$question->id}}"
+                                   class="accordion__label">- {{$question->question}}</label>
+                            <div class="accordion__content">
+                                <p>
+                                    {{$question->answer}}
+                                </p>
                             </div>
-                        @endif
+                        </div>
                     @endforeach
 
                     <div class="extra-space-l"></div>
                     <center>
-                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" style="width:200px;">
+                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" style="width:200px;"
+                                id="sorugetir">
                             DAHA FAZLA SORU
                         </button>
                     </center>
@@ -65,27 +64,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="contact-info">
-                            @foreach($contacts as $contact)
-                                <ul class="contact-address">
-                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; {{$contact->address}}
-                                        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="{{$contact->mapUrl}}" class="text-dark" target="_blank">
-                                        <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s">
-                                           Konumu Gör
-                                        </button>
-                                        </a>
-                                    </li>
-                                    <br>
-                                    <li><i class="fa fa-phone"></i>&nbsp;<a href="tel: {{$contact->phone}}" style="color:white;">
-                                            {{$contact->phone}}</a></li>
-                                    <br>
-                                    <li><i class="fa fa-envelope"></i><a href="mailto:{{$contact->mail}}"
-                                                                         style="color:white;"> &nbsp;&nbsp;{{$contact->mail}}</a>
-                                    </li>
-                                </ul>
-                            @endforeach
+                        @foreach($contacts as $contact)
+                        <div class="contact-address">
+                            <div class="items">
+                                <i class="fa fa-map-marker fa-lg"></i>
+                                <div class="adres-txt">
+                                    <p>{{$contact->address}}</p>
+                                    <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s"><a
+                                            href="{{$contact->mapUrl}}" class="text-dark "
+                                            target="_blank">Konumu Gör</a></button>
+                                </div>
+                            </div>
+                            <div class="items"><i class="fa fa-phone"><a href="tel:{{$contact->phone}}"
+                                                                         class="text-white">{{$contact->phone}}</a></i></div>
+                            <div class="items"><i class="fa fa-envelope"><a href="mailto:{{$contact->mail}}"
+                                                                            class="text-white">&nbsp;{{$contact->mail}}</a></i></div>
                         </div>
+                        @endforeach
                     </div>
 
                     <div class="col-sm-6">
@@ -111,18 +106,19 @@
                                 </div>
                                 <br>
                                 <div class="form-check">
-                                    <input
-                                        class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk1"/>
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <div class="kvk">
+                                        <input
+                                            class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk1"/>
+                                        <label class="form-check-label" for="flexCheckChecked">
 
-                                        <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5"
-                                           class="text-white" target="_blank">Kvkk yı kabul et </a>
-                                    </label>
+                                            <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
+                                                Ediyorum </a>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="extra-space-l"></div>
-                                <button type="submit" class="btn wow bounceInRight" id="submitButton1"
-                                        data-wow-delay="0.5s"
-                                        style="background-color:#363940; color:white">GÖNDER
+                                <button type="submit" class="btn wow bounceInRight" id="submitButton1" data-wow-delay="0.8s"
+                                        style="background-color:#363940; color: white" >GÖNDER
                                 </button>
                             </form>
                         </div>
@@ -147,3 +143,17 @@
 </footer>
 
 
+<!--<div id="sorular" display="none">
+                              <div>
+             <input type="radio" name="example_accordion" id="{{$question->id}}"
+                  class="accordion__input">
+               <label for="{{$question->id}}"
+              class="accordion__label">- {{$question->question}}</label>
+                       <div class="accordion__content">
+                        <p>
+                            {{$question->answer}}
+    </p>
+</div>
+</div>
+
+</div>-->

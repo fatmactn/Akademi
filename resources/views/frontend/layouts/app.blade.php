@@ -25,13 +25,18 @@
     <!-- Libs and Plugins CSS -->
     <link rel="stylesheet" href="{{asset('frontend/inc/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/inc/animations/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/inc/font-awesome/css/font-awesome.min.css')}}"> <!-- Font Icons -->
+    <link rel="stylesheet" href="{{asset('frontend/inc/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/inc/owl-carousel/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/inc/owl-carousel/css/owl.theme.css')}}">
+    <!-- Font Icons -->
 
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/lightbox.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
     <!-- Skin CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/skin/cool-gray.css')}}">
@@ -105,6 +110,9 @@
 <script src="{{asset('frontend/inc/jquery.easing.min.js')}}"></script>
 <script src="{{asset('frontend/inc/jquery.counterup.min.js')}}"></script>
 <script src="{{asset('frontend/inc/smoothscroll.js')}}"></script>
+<script src="{{asset('frontend/js/lightbox.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
 
 <!-- Theme JS -->
 <script src="{{asset('frontend/js/theme.js')}}"></script>
@@ -142,6 +150,16 @@
             $('#submitButton1').addClass('disabled')
         }
     })
+</script>
+
+<script>
+    var btnGizle=document.getElementById("sorugetir");
+    var id = 3;
+    btnGizle.onclick=function(){
+        //display özelliği none yapılarak gizleme işlemi yapılır.
+        document.getElementById("soru-"+id).style.display="block";
+        id++;
+    }
 </script>
 
 </body>

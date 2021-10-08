@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('content')
-
+    <?php $title = 'Contact'?>
     <div class="row">
         <div class="col-12">
             <div class="card">

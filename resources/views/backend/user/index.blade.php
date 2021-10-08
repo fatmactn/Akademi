@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-
+<?php $title = 'User'?>
 @section('content')
 
     <div class="row">

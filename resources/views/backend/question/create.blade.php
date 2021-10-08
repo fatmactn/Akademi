@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-
+<?php $title = 'Question Create'?>
 @section('content')
     <div class="row">
         <div class="col-12">

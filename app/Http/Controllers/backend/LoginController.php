@@ -20,6 +20,9 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
+        ], [
+            'email.required' => 'Eposta alanı zorunludur',
+            'password.required' => 'Parola alanı zorunludur',
         ]);
 
 //        $credentials = $request->only('email', 'password');

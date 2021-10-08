@@ -25,6 +25,6 @@ class RegisterController extends Controller
         $request->merge(['password' => Hash::make(request('password'))]);
         User::create($request->except('_token'));
 
-        return view('backend.login.index');
+        return redirect()->route('backend.login.index')->with('success','Başarıyla kayıt oldunuz.');
     }
 }

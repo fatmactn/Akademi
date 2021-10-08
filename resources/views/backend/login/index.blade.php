@@ -27,6 +27,12 @@
             <form action="{{ route('backend.login.login') }}" method="post">
                 @csrf
                 <div class="results">
+                    @if(\Illuminate\Support\Facades\Session::get('success'))
+                        <div class="alert alert-success">
+                            {{\Illuminate\Support\Facades\Session::get('success')}}
+                        </div>
+                    @endif
+
                     @if(\Illuminate\Support\Facades\Session::get('fail'))
                         <div class="alert alert-danger">
                             {{\Illuminate\Support\Facades\Session::get('fail')}}
@@ -43,6 +49,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <input type="password" class="form-control" placeholder="Şifre" name="password" id="password">
+
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>

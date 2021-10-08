@@ -35,11 +35,9 @@ class LoginController extends Controller
             } else {
                 return redirect()->route('backend.login.index')->with('fail', 'Yetkiniz yok.');
             }
-
         } else {
             return redirect()->route('backend.login.index')->with('fail', 'Kullanıcı yok.');
         }
-
     }
 
 

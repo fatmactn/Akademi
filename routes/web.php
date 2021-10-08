@@ -26,6 +26,7 @@ Route::post('/register', [\App\Http\Controllers\Backend\RegisterController::clas
 
 Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.home.index');
 Route::post('/',[\App\Http\Controllers\Frontend\ContactFormController::class, 'store'])->name('frontend.contactForm.store');
+Route::post('/form',[\App\Http\Controllers\Frontend\FormController::class, 'store'])->name('frontend.form.store');
 
 Route::group(['middleware' => ['auth']], function() {
 

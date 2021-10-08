@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Servislet Akademi</title>
     <meta name="description" content="Servislet Akademi">
-    <meta name="keywords" content="Akademi" />
+    <meta name="keywords" content="Akademi, Servislet, Eğitim, Staj, php, laravel, mobil, ui/ux, michelin, lastik" />
     <meta name="author" content="servislet.com">
 
     <!-- Mobile Metas -->

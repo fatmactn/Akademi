@@ -7,6 +7,9 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('backend.question.store') }}">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                        @endif
                         <div class="form-group">
                             <label>Soru</label>
                             <input type="text" name="question" class="form-control" value="{{ old('question') }}">

@@ -8,6 +8,9 @@
                     <form method="POST" action="{{ route('backend.content.update', ['content' => $content]) }}">
                         @method('POST')
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                        @endif
                         <div class="form-group">
                             <label>Başlık</label>
                             <input type="text" name="title" class="form-control" value="{{ $content->title }}">

@@ -23,6 +23,9 @@ class ContentController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required'
+        ], [
+            'title.required' => 'Başlık zorunludur',
+            'content.required' => 'İçerik zorunludur',
         ]);
         Content::create($request->post());
         return redirect()->route('backend.content.index')->withSuccess('İçerik başarıyla kaydedildi');
@@ -52,6 +55,9 @@ class ContentController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required'
+        ], [
+            'title.required' => 'Başlık zorunludur',
+            'content.required' => 'İçerik zorunludur',
         ]);
 
         //dd($request->all());

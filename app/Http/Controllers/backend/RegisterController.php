@@ -20,11 +20,17 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:5'
+        ], [
+            'name.required' => 'Ad soyad alanı zorunludur',
+            'email.required' => 'Eposta olmak zorunda',
+            'email.email' => 'Geçerli bir email girin.',
+            'email.unique' => 'Kayıtlı eposta girdiniz.',
+            'password.required' => 'Parola alanı doldurlmak zorundadır.',
         ]);
 
         $request->merge(['password' => Hash::make(request('password'))]);
         User::create($request->except('_token'));
 
-        return redirect()->route('backend.login.index')->with('success','Başarıyla kayıt oldunuz.');
+        return redirect()->route('backend.login.index')->with('success', 'Başarıyla kayıt oldunuz.');
     }
 }

@@ -6,7 +6,8 @@
     <title>AdminLTE 3 | Registration Page (v2)</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- icheck bootstrap -->
@@ -25,6 +26,9 @@
 
             <form action="{{ route('backend.register.register') }}" method="post">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">{{$errors->first()}}</div>
+                @endif
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Ad-Soyad" name="name" id="name">
                     <div class="input-group-append">

@@ -1,8 +1,5 @@
 ![Servislet Logo](public/frontend/img/logo2.png)
 
-
-#SERVİSLET AKADEMİ
-
 ## Installation
 
 1. Pull project from git.

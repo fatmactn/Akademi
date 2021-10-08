@@ -70,9 +70,13 @@
                                 <i class="fa fa-map-marker fa-lg"></i>
                                 <div class="adres-txt">
                                     <p>{{$contact->address}}</p>
-                                    <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s"><a
-                                            href="{{$contact->mapUrl}}" class="text-dark "
-                                            target="_blank">Konumu Gör</a></button>
+                                    <a
+                                        href="{{$contact->mapUrl}}" class="text-dark "
+                                        target="_blank">
+                                    <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s">
+                                        Konumu Gör
+                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="items"><i class="fa fa-phone"><a href="tel:{{$contact->phone}}"

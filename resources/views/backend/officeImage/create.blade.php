@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-
+<?php $title = 'Office Image Create'?>
 @section('content')
     <div class="row">
         <div class="col-12">

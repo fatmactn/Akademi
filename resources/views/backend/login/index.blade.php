@@ -26,6 +26,9 @@
 
             <form action="{{ route('backend.login.login') }}" method="post">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">{{$errors->first()}}</div>
+                @endif
                 <div class="results">
                     @if(\Illuminate\Support\Facades\Session::get('success'))
                         <div class="alert alert-success">

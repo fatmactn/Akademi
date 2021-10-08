@@ -879,63 +879,6 @@ p.subtitle {
     height: 80px;
 }
 
-/* ===== End more-space ===== */
-
-
-/* ===== Begin OWL carousel ===== */
-/*.owl-carousel {
-	cursor: e-resize;
-}
-.owl-theme .owl-controls {
-	margin-top: 30px;
-}
-.owl-theme .owl-controls .owl-page span {
-	background: rgba(0, 0, 0, 0);
-	width: 14px;
-	height: 14px;
-	border: 3px solid #fff;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
-	background: rgba(0, 0, 0, 0);
-	border: 3px solid #fff;
-}
-.owl-buttons {
-	position: absolute;
-	top: 50%;
-	margin-top: -25px;
-	width: 100%;
-}
-.owl-theme .owl-controls .owl-buttons div {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	line-height: 100px;
-	margin: 0;
-	text-align: center;
-	background: transparent;
-	opacity: 1;
-}
-.owl-theme .owl-controls.clickable .owl-buttons div:hover {
-	opacity: .5;
-}
-.owl-next {
-	background-image: url(../img/arrow-right.png) !important;
-	background-repeat: no-repeat !important;
-	background-position: center !important;
-	right: 0;
-}
-.owl-prev {
-	background-image: url(../img/arrow-left.png) !important;
-	background-repeat: no-repeat !important;
-	background-position: center !important;
-	left: 0;
-}*/
-/* ===== End OWL carousel ===== */
-
 
 /* ===== Begin buttons ===== */
 .btn {
@@ -1311,7 +1254,7 @@ p.subtitle {
 }
 
 .home-carousel-right {
-    right: 2 0px;
+    right: 20px;
 }
 
 #home-carousel:hover .home-carousel-left {

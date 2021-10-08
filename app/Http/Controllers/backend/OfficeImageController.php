@@ -21,7 +21,10 @@ class OfficeImageController extends Controller
         $request->validate([
             'title' => 'required',
             'imageUrl' => 'required|mimes:jpg,jpeg'
-        ]);
+        ], [
+            'title.required' => 'Başlık alanı zorunludur',
+            'imageUrl.required' => 'Fotoğraf eklemelisiniz',
+            'imageUrl.mimes' => 'Fotoğraf jpg ya da jpeg olmalıdır',]);
 
         $fileModel = new OfficeImage;
 

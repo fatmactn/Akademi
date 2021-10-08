@@ -7,6 +7,9 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('backend.officeImage.store') }}" enctype="multipart/form-data">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                        @endif
                         <div class="form-group">
                             <label>Fotoğraf Başlığı</label>
                             <input type="text" name="title" class="form-control" value="{{ old('title') }}">

@@ -11,9 +11,9 @@ class HomeController extends Controller
     public function index()
     {
         if (!Auth::check()) {
-            return redirect()->route('backend.login.login');
+            return redirect()->route('backend.login.index');
         } elseif (auth()->user()->status !== 1) {
-            return redirect()->route('backend.login.login');
+            return redirect()->route('backend.login.index');
         } else {
             return view('backend.home.index');
         }

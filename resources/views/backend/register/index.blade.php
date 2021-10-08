@@ -6,7 +6,8 @@
     <title>AdminLTE 3 | Registration Page (v2)</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- icheck bootstrap -->
@@ -18,15 +19,18 @@
 <div class="register-box">
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="/" class="h1"><b>Servislet</b>Admin</a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Register a new membership</p>
+            <p class="login-box-msg">Yeni kullanıcı oluştur</p>
 
             <form action="{{ route('backend.register.register') }}" method="post">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">{{$errors->first()}}</div>
+                @endif
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Full name" name="name" id="name">
+                    <input type="text" class="form-control" placeholder="Ad-Soyad" name="name" id="name">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
@@ -42,7 +46,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+                    <input type="password" class="form-control" placeholder="Şifre" name="password" id="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -52,21 +56,18 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                            <label for="agreeTerms">
-                                I agree to the <a href="#">terms</a>
-                            </label>
+
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
-            <a href="/login" class="text-center">I already have a membership</a>
+            <a href="/login" class="text-center">Hesabınız varsa giriş yapın</a>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

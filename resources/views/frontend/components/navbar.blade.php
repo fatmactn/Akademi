@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="index.html">Unika</a>
+            <a class="navbar-brand page-scroll" href="/">Servislet Akademi</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,9 +18,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li><a class="page-scroll" href="body">Home</a></li> -->
                 <li><a class="page-scroll" href="#about-section">Akademi</a></li>
-                <li><a class="page-scroll" href="#services-section">Ofis</a></li>
-                <li><a class="page-scroll" href="#portfolio-section">Ekibimiz</a></li>
-                <!-- <li><a class="page-scroll" href="#team-section">EKİBİMİZ</a></li>                             -->
+                <li><a class="page-scroll" href="#portfolio-section">Ofis</a></li>
+                <li><a class="page-scroll" href="#team-section">Ekibimiz</a></li>
+                <!--li><a class="page-scroll" href="#team-section">EKİBİMİZ</a></li>                             -->
                 <li><a class="page-scroll" href="#apply-section">Başvuru</a></li>
                 <li><a class="page-scroll" href="#questions-section">S.S.S</a></li>
                 <li><a class="page-scroll" href="#contact-section">İletişim</a></li>

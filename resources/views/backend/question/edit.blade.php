@@ -8,6 +8,9 @@
                     <form method="POST" action="{{ route('backend.question.update', ['question' => $question]) }}">
                         @method('POST')
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                        @endif
                         <div class="form-group">
                             <label>Soru</label>
                             <input type="text" name="question" class="form-control" value="{{ $question->question }}">

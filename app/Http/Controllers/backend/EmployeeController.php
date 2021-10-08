@@ -22,19 +22,34 @@ class EmployeeController extends Controller
         return view('backend.employee.create');
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
             'nameSurname' => 'required',
             'degree' => 'required',
-            'imageUrl' => 'required',
+            'imageUrl' => 'required|mimes:jpg,jpeg',
             'linkedinUrl' => 'required',
-
+        ], [
+            'nameSurname.required' => 'Ad soyad alanı zorunludur',
+            'degree.required' => 'Yetki alanı boş olamaz',
+            'imageUrl.required' => 'Lütfen resim ekleyiniz',
+            'linkedinUrl.required' => 'Lİnkedin hesabınızı ekleyiniz',
         ]);
-        Employee::create($request->post());
+        $fileModel = new Employee;
 
-        return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Kaydedildi.');
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+
+            $fileModel->nameSurname = $request->nameSurname;
+            $fileModel->degree = $request->degree;
+            $fileModel->linkedinUrl = $request->linkedinUrl;
+            $fileModel->status = (isset($request->status) && ($request->status == 'on')) ? true : false;
+            $fileModel->imageUrl = '/storage/' . $filePath;
+            $fileModel->save();
+
+            return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Kaydedildi.');
+        }
     }
 
 
@@ -58,20 +73,24 @@ class EmployeeController extends Controller
         $request->validate([
             'nameSurname' => 'required',
             'degree' => 'required',
-            'imageUrl' => 'required',
             'linkedinUrl' => 'required',
+        ], [
+            'nameSurname.required' => 'Ad soyad alanı zorunludur',
+            'degree.required' => 'Yetki alanı boş olamaz',
+            'linkedinUrl.required' => 'Lİnkedin hesabınızı ekleyiniz',
         ]);
+        $employee->nameSurname = $request->nameSurname;
+        $employee->degree = $request->degree;
+        $employee->linkedinUrl = $request->linkedinUrl;
+        $employee->status = (isset($request->status) && ($request->status == 'on')) ? true : false;
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+            $employee->imageUrl = '/storage/' . $filePath;
+        }
+        $employee->save();
 
-
-        $employee->update([
-            'nameSurname' => $request->nameSurname,
-            'degree' => $request->degree,
-            'imageUrl' => $request->imageUrl,
-            'linkedinUrl' => $request->linkedinUrl,
-            'status' => (isset($request->status) && ($request->status == 'on')) ? true:false,
-        ]);
-
-        return redirect()->route('backend.employee.index')->withSuccess('Soru Başarıyla Güncellendi.');
+        return redirect()->route('backend.employee.index')->withSuccess('Personel Başarıyla Güncellendi.');
     }
 
 

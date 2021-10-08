@@ -20,10 +20,25 @@ class OfficeImageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'imageUrl' => 'required'
-        ]);
-        OfficeImage::create($request->post());
-        return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Kaydedildi.');
+            'imageUrl' => 'required|mimes:jpg,jpeg'
+        ], [
+            'title.required' => 'Başlık alanı zorunludur',
+            'imageUrl.required' => 'Fotoğraf eklemelisiniz',
+            'imageUrl.mimes' => 'Fotoğraf jpg ya da jpeg olmalıdır',]);
+
+        $fileModel = new OfficeImage;
+
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+
+            $fileModel->title = $request->title;
+            $fileModel->content = $request->get('content');
+            $fileModel->imageUrl = '/storage/' . $filePath;
+            $fileModel->save();
+
+            return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Kaydedildi.');
+        }
     }
 
     public function create()
@@ -49,18 +64,18 @@ class OfficeImageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'imageUrl' => 'required'
         ]);
-
-
-        $officeImage->update([
-            'title' => $request->title,
-            'imageUrl' => $request->imageUrl,
-            'status' => (isset($request->status) && ($request->status == 'on')) ? true:false,
-        ]);
-
+        $officeImage->title = $request->title;
+        $officeImage->content = $request->get('content');
+        if ($request->file()) {
+            $fileName = time() . '_' . $request->imageUrl->getClientOriginalName();
+            $filePath = $request->file('imageUrl')->storeAs('uploads', $fileName, 'public');
+            $officeImage->imageUrl = '/storage/' . $filePath;
+        }
+        $officeImage->save();
 
         return redirect()->route('backend.officeImage.index')->withSuccess('Resim Başarıyla Güncellendi.');
+
     }
 
     public function destroy($id)

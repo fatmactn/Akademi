@@ -50,10 +50,8 @@
                             <h4>Backend Geliştirme</h4>
                             <ul>
                                 <li>MySQL</li><br>
-                                <li>MsSQL</li><br>
                                 <li>Laravel</li><br>
                                 <li>Symfony</li><br>
-                                <li>Asp.Net</li><br>
                                 <li>React</li><br>
                             </ul>
                         </div>

@@ -22,6 +22,9 @@ class QuestionController extends Controller
         $request->validate([
             'question' => 'required',
             'answer' => 'required'
+        ], [
+            'question.required' => 'Soru zorunludur',
+            'answer.required' => 'Cevap zorunludur',
         ]);
         Question::create($request->post());
         return redirect()->route('backend.question.index')->withSuccess('Soru Başarıyla Kaydedildi.');
@@ -51,6 +54,9 @@ class QuestionController extends Controller
         $request->validate([
             'question' => 'required',
             'answer' => 'required'
+        ], [
+            'question.required' => 'Soru zorunludur',
+            'answer.required' => 'Cevap zorunludur',
         ]);
 
         //dd($request->all());

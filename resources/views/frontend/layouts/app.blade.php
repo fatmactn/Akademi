@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	Template:	 Unika - Responsive One Page HTML5 Template
+	Template:	 Servislet - Responsive One Page HTML5 Template
 	Author:		 imransdesign.com
 	URL:		 http://imransdesign.com/
     Designed By: https://www.behance.net/poljakova
@@ -10,10 +10,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Unika - Responsive One Page HTML5 Template</title>
-    <meta name="description" content="Unika - Responsive One Page HTML5 Template">
-    <meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
-    <meta name="author" content="imransdesign.com">
+    <title>Servislet Akademi</title>
+    <meta name="description" content="Servislet Akademi">
+    <meta name="keywords" content="Akademi, Servislet, Eğitim, Staj, php, laravel, mobil, ui/ux, michelin, lastik" />
+    <meta name="author" content="servislet.com">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,13 +25,18 @@
     <!-- Libs and Plugins CSS -->
     <link rel="stylesheet" href="{{asset('frontend/inc/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/inc/animations/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/inc/font-awesome/css/font-awesome.min.css')}}"> <!-- Font Icons -->
+    <link rel="stylesheet" href="{{asset('frontend/inc/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/inc/owl-carousel/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/inc/owl-carousel/css/owl.theme.css')}}">
+    <!-- Font Icons -->
 
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/lightbox.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
     <!-- Skin CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/skin/cool-gray.css')}}">
@@ -72,7 +77,6 @@
     @include('frontend.components.team')
     <!-- End team-->
 
-    <div class="extra-space-l"></div>
     @include('frontend.components.form')
 
 
@@ -80,9 +84,6 @@
     <!-- Begin social section -->
     @include('frontend.components.social')
     <!-- End social section -->
-
-
-
 
 
     <!-- Begin footer -->
@@ -109,11 +110,57 @@
 <script src="{{asset('frontend/inc/jquery.easing.min.js')}}"></script>
 <script src="{{asset('frontend/inc/jquery.counterup.min.js')}}"></script>
 <script src="{{asset('frontend/inc/smoothscroll.js')}}"></script>
+<script src="{{asset('frontend/js/lightbox.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
 
 <!-- Theme JS -->
 <script src="{{asset('frontend/js/theme.js')}}"></script>
 
+<script>
+    $( document ).ready(function() {
+        if(!$('#isKvkk').is('checked')){
+            $('#submitButton').addClass('disabled')
+        }
+    });
 
+
+    $('#isKvkk').change(function () {
+        if(this.checked){
+            $('#submitButton').removeClass('disabled')
+        } else {
+            $('#submitButton').addClass('disabled')
+        }
+    })
+</script>
+
+
+<script>
+    $( document ).ready(function() {
+        if(!$('#isKvkk1').is('checked')){
+            $('#submitButton1').addClass('disabled')
+        }
+    });
+
+
+    $('#isKvkk1').change(function () {
+        if(this.checked){
+            $('#submitButton1').removeClass('disabled')
+        } else {
+            $('#submitButton1').addClass('disabled')
+        }
+    })
+</script>
+
+<script>
+    var btnGizle=document.getElementById("sorugetir");
+    var id = 3;
+    btnGizle.onclick=function(){
+        //display özelliği none yapılarak gizleme işlemi yapılır.
+        document.getElementById("soru-"+id).style.display="block";
+        id++;
+    }
+</script>
 
 </body>
 

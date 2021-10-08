@@ -11,10 +11,10 @@ class ContactFormController extends Controller
     public function index()
     {
         try {
-            $officeImageApi = ContactForm::all();
+            $contactFormApi = ContactForm::all();
             return response([
                 'status' => 'success',
-                'contactForms' => $officeImageApi
+                'contactForms' => $contactFormApi
             ],200);
         }catch (\Exception $exception){
             return response([
@@ -27,10 +27,10 @@ class ContactFormController extends Controller
     public function create(Request $request)
     {
         try {
-            if($officeImage = ContactForm::create($request->except('_token'))){
+            if($contactFormApi = ContactForm::create($request->except('_token'))){
                 return response([
                     'status' => 'success',
-                    'contactForms' => $officeImage
+                    'contactForms' => $contactFormApi
                 ]);
             }
         }

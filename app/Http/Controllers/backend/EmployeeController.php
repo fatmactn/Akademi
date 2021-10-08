@@ -29,6 +29,11 @@ class EmployeeController extends Controller
             'degree' => 'required',
             'imageUrl' => 'required|mimes:jpg,jpeg',
             'linkedinUrl' => 'required',
+        ], [
+            'nameSurname.required' => 'Ad soyad alanı zorunludur',
+            'degree.required' => 'Yetki alanı boş olamaz',
+            'imageUrl.required' => 'Lütfen resim ekleyiniz',
+            'linkedinUrl.required' => 'Lİnkedin hesabınızı ekleyiniz',
         ]);
         $fileModel = new Employee;
 
@@ -69,6 +74,10 @@ class EmployeeController extends Controller
             'nameSurname' => 'required',
             'degree' => 'required',
             'linkedinUrl' => 'required',
+        ], [
+            'nameSurname.required' => 'Ad soyad alanı zorunludur',
+            'degree.required' => 'Yetki alanı boş olamaz',
+            'linkedinUrl.required' => 'Lİnkedin hesabınızı ekleyiniz',
         ]);
         $employee->nameSurname = $request->nameSurname;
         $employee->degree = $request->degree;

@@ -8,6 +8,9 @@
                     <form method="POST" action="{{ route('backend.employee.update', ['employee' => $employee]) }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                        @endif
                         <div class="form-group">
                             <label>Ad Soyad</label>
                             <input type="text" name="nameSurname" class="form-control" value="{{ $employee->nameSurname }}">

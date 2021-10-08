@@ -7,12 +7,15 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('backend.employee.store') }}" enctype="multipart/form-data">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                        @endif
                         <div>
                             <label>Ad Soyad</label>
                             <input type="text" name="nameSurname" class="form-control" value="{{ old('nameSurname') }}">
                         </div>
                         <div>
-                            <label>Degree</label>
+                            <label>Yetki</label>
                             <input type="text" name="degree" class="form-control" value="{{ old('degree') }}">
                         </div>
                         <div class="form-group">

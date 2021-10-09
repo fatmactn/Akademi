@@ -8,31 +8,35 @@ use Illuminate\Http\Request;
 
 class ContactFormController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('frontend.components.footer');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'mail' => 'required|email',
-            'subject' => 'required',
-            'message' => 'required',
-            'isKvkk' => 'required'
-        ]);
+        try {
+            $request->validate([
+                'name' => 'required',
+                'mail' => 'required|email',
+                'subject' => 'required',
+                'message' => 'required',
+                'isKvkk' => 'required'
+            ]);
 
+            ContactForm::create([
+                'name' => $request->name,
+                'mail' => $request->mail,
+                'subject' => $request->subject,
+                'message' => $request->message,
+                'isKvkk' => (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true : false
+            ]);
 
-        ContactForm::create([
-          'name' => $request->name,
-          'mail' => $request->mail,
-        'subject' => $request->subject,
-         'message' => $request->message,
-            'isKvkk' => (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true:false
-        ]);
-
-
-        return redirect()->route('frontend.home.index')->withSuccess('Mesajınız Kaydedildi.');
+            return redirect()->route('frontend.home.index', '#contact-section')->with('success0', 'Mesajınız Kaydedildi.');
+//        return redirect()->route('frontend.home.index')->withSuccess('Mesajınız Kaydedildi.');
+        } catch (\Exception $e) {
+            return redirect()->route('frontend.home.index', '#contact-section')->with('error0', 'Mesajınız Kaydedilemedi.');
+        }
     }
 
     public function create()

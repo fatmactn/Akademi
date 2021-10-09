@@ -21,20 +21,35 @@
 
                 <div class="col-sm-6">
                     <div class="apply-form">
-                        <form role="form" action="{{route('frontend.form.store')}}" method="POST" enctype="multipart/form-data">
+                        <form role="form" action="{{route('frontend.form.store')}}" method="POST"
+                              enctype="multipart/form-data">
                             @csrf
+                            @if(session('success1'))
+                                <div class="alert alert-success">
+                                    <i class="fa fa-check"></i>
+                                    {{session('success1')}}
+                                </div>
+                            @elseif(session('error1'))
+                                <div class="alert alert-danger">
+                                    <i class="fa fa-times"></i>
+                                    {{session('error1')}}
+                                </div>
+                            @endif
                             <div class="form-group ">
-                                <input type="text" name="nameSurname" class="form-control input-lg text-white" placeholder="Adınız :" required>
+                                <input type="text" name="nameSurname" class="form-control input-lg text-white"
+                                       placeholder="Adınız :" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="mail" class="form-control input-lg text-white" placeholder="E-mailiniz :"
+                                <input type="email" name="mail" class="form-control input-lg text-white"
+                                       placeholder="E-mailiniz :"
                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="linkedinUrl" class="form-control input-lg text-white" placeholder="LinkedIn Url :">
+                                <input type="text" name="linkedinUrl" class="form-control input-lg text-white"
+                                       placeholder="LinkedIn Url :">
                             </div>
                             <div class="input-group">
-                                <input type="text"  class="form-control input-lg text-white" placeholder="Özgeçmiş :"
+                                <input type="text" class="form-control input-lg text-white" placeholder="Özgeçmiş :"
                                        aria-describedby="basic-addon2" disabled>
                                 <span class="input-group-addon" id="basic-addon2"><input type="file" name="resumePath"
                                                                                          placeholder="Özgeçmiş :"></span>
@@ -42,13 +57,14 @@
                             <br>
                             <div class="form-check">
                                 <div class="kvk">
-                                <input
-                                    class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk"/>
-                                <label class="form-check-label" for="flexCheckChecked">
+                                    <input
+                                        class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk"/>
+                                    <label class="form-check-label" for="flexCheckChecked">
 
-                                    <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
-                                        Ediyorum </a>
-                                </label>
+                                        <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5"
+                                           class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
+                                            Ediyorum </a>
+                                    </label>
                                 </div>
                             </div>
                             <div class="extra-space-l"></div>

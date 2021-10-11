@@ -19,36 +19,30 @@ class FormController extends Controller
             'nameSurname' => 'required',
             'mail' => 'required|email',
             'linkedinUrl' => 'required',
-            'resumePath' => 'required|mimes:pdf',
+            'resumePath' => 'mimes:pdf',
             'isKvkk' => 'required'
         ]);
 
         $fileModel = new Form;
 
+        $fileModel->nameSurname = $request->nameSurname;
+        $fileModel->mail = $request->mail;
+        $fileModel->linkedinUrl = $request->linkedinUrl;
+        $fileModel->isKvkk = (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true : false;
+
         if ($request->file()) {
             $fileName = time() . '_' . $request->resumePath->getClientOriginalName();
             $filePath = $request->file('resumePath')->storeAs('uploads', $fileName, 'public');
-
-            $fileModel->nameSurname = $request->nameSurname;
-            $fileModel->mail = $request->mail;
-            $fileModel->linkedinUrl = $request->linkedinUrl;
-            $fileModel->isKvkk = (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true : false;
             $fileModel->resumePath = '/storage/' . $filePath;
-            $fileModel->save();
-            return redirect()->route('frontend.home.index', '#apply-section')->with('success1', 'Başvurunuz Kaydedildi.');
-        } else {
-            return redirect()->route('frontend.home.index', '#apply-section')->with('error1', 'Başvurunuz Kaydedilemedi.');
+
         }
-
-        //Form::create([
-        //  'nameSurname' => $request->nameSurname,
-        //  'mail' => $request->mail,
-        //'linkedinUrl' => $request->linkedinUrl,
-        // 'isKvkk' => (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true:false,
-        //]);
+        else {
+            $fileModel->resumePath ="";
+        }
+        $fileModel->save();
+        return redirect()->route('frontend.home.index', '#apply-section')->with('success1', 'Başvurunuz kaydedildi.');
 
 
-        //return redirect()->route('frontend.form.index')->withSuccess('Başvurunuz Kaydedildi.');
     }
 
     public function create()

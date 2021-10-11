@@ -117,40 +117,6 @@
 <!-- Theme JS -->
 <script src="{{asset('frontend/js/theme.js')}}"></script>
 
-<script>
-    $( document ).ready(function() {
-        if(!$('#isKvkk').is('checked')){
-            $('#submitButton').addClass('disabled')
-        }
-    });
-
-
-    $('#isKvkk').change(function () {
-        if(this.checked){
-            $('#submitButton').removeClass('disabled')
-        } else {
-            $('#submitButton').addClass('disabled')
-        }
-    })
-</script>
-
-
-<script>
-    $( document ).ready(function() {
-        if(!$('#isKvkk1').is('checked')){
-            $('#submitButton1').addClass('disabled')
-        }
-    });
-
-
-    $('#isKvkk1').change(function () {
-        if(this.checked){
-            $('#submitButton1').removeClass('disabled')
-        } else {
-            $('#submitButton1').addClass('disabled')
-        }
-    })
-</script>
 
 <script>
     var btnGizle=document.getElementById("sorugetir");

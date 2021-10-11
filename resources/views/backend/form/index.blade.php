@@ -46,9 +46,16 @@
                                 <td>{{$form->id}}</td>
                                 <td>{{$form->nameSurname}}</td>
                                 <td>{{$form->mail}}</td>
-                                <td><a href="{{asset($form->resumePath)}}" target="_blank"> Cv
-                                        <i class="fa fa-file"></i>
-                                    </a> </td>
+                                @if($form->resumePath == null)
+                                    <td><a> Cv
+                                            <i class="fa fa-file"></i>
+                                        </a> </td>
+                                @else
+                                    <td><a href="{{asset($form->resumePath)}}" target="_blank"> Cv
+                                            <i class="fa fa-file"></i>
+                                        </a> </td>
+                                @endif
+
                                 <td><a href="{{$form->linkedinUrl}}" target="_blank">{{$form->linkedinUrl}}</a> </td>
                                 <td>
                                     <a href="{{route('backend.form.destroy',$form->id)}}" class="btn btn-sm btn-danger">

@@ -52,18 +52,18 @@
                                 <input type="text" class="form-control input-lg text-white" placeholder="Özgeçmiş :"
                                        aria-describedby="basic-addon2" disabled>
                                 <span class="input-group-addon" id="basic-addon2"><input type="file" name="resumePath"  accept=".pdf"
-                                                                                         placeholder="Özgeçmiş :" required></span>
+                                                                                         placeholder="Özgeçmiş :(Zorunlu değil)" ></span>
                             </div>
                             <br>
                             <div class="form-check">
                                 <div class="kvk">
                                     <input
-                                        class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk"/>
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                        class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk" required/>
+                                    <label class="form-check-label" for="flexCheckChecked" >
 
                                         <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5"
-                                           class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
-                                            Ediyorum </a>
+                                           class="text-white" target="_blank"> &nbsp;&nbsp;&nbsp;
+                                            KVKK aydınlatma metnini kabul ediyorum </a>
                                     </label>
                                 </div>
                             </div>

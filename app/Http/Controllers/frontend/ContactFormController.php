@@ -32,10 +32,9 @@ class ContactFormController extends Controller
                 'isKvkk' => (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true : false
             ]);
 
-            return redirect()->route('frontend.home.index', '#contact-section')->with('success0', 'Mesajınız Kaydedildi.');
-//        return redirect()->route('frontend.home.index')->withSuccess('Mesajınız Kaydedildi.');
+            return redirect()->route('frontend.home.index', '#contact-section')->with('success0', 'Mesajınız kaydedildi.');
         } catch (\Exception $e) {
-            return redirect()->route('frontend.home.index', '#contact-section')->with('error0', 'Mesajınız Kaydedilemedi.');
+            return redirect()->route('frontend.home.index', '#contact-section')->with('error0', 'Mesajınız kaydedilemedi.');
         }
     }
 

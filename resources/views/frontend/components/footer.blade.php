@@ -125,12 +125,12 @@
                                 <div class="form-check">
                                     <div class="kvk">
                                         <input
-                                            class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk1"/>
+                                            class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk1" required/>
                                         <label class="form-check-label" for="flexCheckChecked">
 
                                             <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5"
-                                               class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
-                                                Ediyorum </a>
+                                               class="text-white" target="_blank">&nbsp;&nbsp;&nbsp;
+                                                KVKK aydınlatma metnini kabul ediyorum </a>
                                         </label>
                                     </div>
                                 </div>

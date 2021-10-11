@@ -17,6 +17,7 @@
 
                 <div class="col-sm-12 col-md-12">
                     <center><h4>Sıkça Sorulan Sorular</h4></center>
+                    asd
                     @foreach($questions as $key => $question)
                         <div id="soru-{{$key}}" style="display:{{$key > 2 ? 'none': 'block'}}">
                             <input type="radio" name="example_accordion" id="{{$question->id}}"

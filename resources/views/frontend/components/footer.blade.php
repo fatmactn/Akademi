@@ -65,25 +65,27 @@
                 <div class="row">
                     <div class="col-sm-6">
                         @foreach($contacts as $contact)
-                        <div class="contact-address">
-                            <div class="items">
-                                <i class="fa fa-map-marker fa-lg"></i>
-                                <div class="adres-txt">
-                                    <p>{{$contact->address}}</p>
-                                    <a
-                                        href="{{$contact->mapUrl}}" class="text-dark "
-                                        target="_blank">
-                                    <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s">
-                                        Konumu Gör
-                                    </button>
-                                    </a>
+                            <div class="contact-address">
+                                <div class="items">
+                                    <i class="fa fa-map-marker fa-lg"></i>
+                                    <div class="adres-txt">
+                                        <p>{{$contact->address}}</p>
+                                        <a
+                                            href="{{$contact->mapUrl}}" class="text-dark "
+                                            target="_blank">
+                                            <button class="btn btn-blank wow bounceInRight" data-wow-delay="0.8s">
+                                                Konumu Gör
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="items"><i class="fa fa-phone"><a href="tel:{{$contact->phone}}"
+                                                                             class="text-white">{{$contact->phone}}</a></i>
+                                </div>
+                                <div class="items"><i class="fa fa-envelope"><a href="mailto:{{$contact->mail}}"
+                                                                                class="text-white">&nbsp;{{$contact->mail}}</a></i>
                                 </div>
                             </div>
-                            <div class="items"><i class="fa fa-phone"><a href="tel:{{$contact->phone}}"
-                                                                         class="text-white">{{$contact->phone}}</a></i></div>
-                            <div class="items"><i class="fa fa-envelope"><a href="mailto:{{$contact->mail}}"
-                                                                            class="text-white">&nbsp;{{$contact->mail}}</a></i></div>
-                        </div>
                         @endforeach
                     </div>
 
@@ -91,6 +93,17 @@
                         <div class="apply-form">
                             <form role="form" action="{{route('frontend.contactForm.store')}}" method="POST">
                                 @csrf
+                                @if(session('success0'))
+                                    <div class="alert alert-success">
+                                        <i class="fa fa-check"></i>
+                                        {{session('success0')}}
+                                    </div>
+                                @elseif(session('error0'))
+                                    <div class="alert alert-danger">
+                                        <i class="fa fa-times"></i>
+                                        {{session('error0')}}
+                                    </div>
+                                @endif
                                 <div class="form-group ">
                                     <input type="text" name="name" class="form-control input-lg text-white"
                                            placeholder="Adınız :" required>
@@ -115,14 +128,16 @@
                                             class="form-check-input" type="checkbox" name="isKvkk" id="isKvkk1"/>
                                         <label class="form-check-label" for="flexCheckChecked">
 
-                                            <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
+                                            <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5"
+                                               class="text-white" target="_blank">KVKK Aydınlatma Metnini Kabul
                                                 Ediyorum </a>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="extra-space-l"></div>
-                                <button type="submit" class="btn wow bounceInRight" id="submitButton1" data-wow-delay="0.8s"
-                                        style="background-color:#363940; color: white" >GÖNDER
+                                <button type="submit" class="btn wow bounceInRight" id="submitButton1"
+                                        data-wow-delay="0.8s"
+                                        style="background-color:#363940; color: white">GÖNDER
                                 </button>
                             </form>
                         </div>

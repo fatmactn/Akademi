@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Servislet Akademi</title>
-    <meta name="description" content="Servislet Akademi">
+    <meta name="description" content="İş yaşantısında kullanılan yazılımlar ve teknolojiler üzerine eğitim vererek çalışma hayatına tecrübeli mühendisler kazandırmayı hedeflemek amacıyla Servislet bünyesinde başlatılmış olan hazırlık programıdır.">
     <meta name="keywords" content="Akademi, Servislet, Eğitim, Staj, php, laravel, mobil, ui/ux, michelin, lastik" />
     <meta name="author" content="servislet.com">
 

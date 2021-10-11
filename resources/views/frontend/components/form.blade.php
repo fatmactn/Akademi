@@ -51,7 +51,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control input-lg text-white" placeholder="Özgeçmiş :"
                                        aria-describedby="basic-addon2" disabled>
-                                <span class="input-group-addon" id="basic-addon2"><input type="file" name="resumePath"
+                                <span class="input-group-addon" id="basic-addon2"><input type="file" name="resumePath"  accept=".pdf"
                                                                                          placeholder="Özgeçmiş :" required></span>
                             </div>
                             <br>

@@ -195,19 +195,19 @@ section {
 }
 
 .navbar-default .navbar-brand {
-    background-image: url(../img/logo2.png);
+    background-image: url(../img/logo2edit.png);
 }
 
 .navbar-shrink .navbar-brand {
-    background-image: url(../img/logo2.png);
+    background-image: url(../img/logo2edit.png);
 }
 
 .navbar-transparent .navbar-brand {
-    background-image: url(../img/logo2.png);
+    background-image: url(../img/logo2edit.png);
 }
 
 .navbar-inverse .navbar-brand {
-    background-image: url(../img/logo2.png);
+    background-image: url(../img/logo2edit.png);
 }
 
 /* Navbar links */

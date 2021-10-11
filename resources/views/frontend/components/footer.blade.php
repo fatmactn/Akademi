@@ -115,11 +115,11 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="subject" class="form-control input-lg text-white"
-                                           placeholder="Konu :">
+                                           placeholder="Konu :" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="message" class="form-control input-lg text-white"
-                                           placeholder="Mesajınız :">
+                                           placeholder="Mesajınız :" required>
                                 </div>
                                 <br>
                                 <div class="form-check">

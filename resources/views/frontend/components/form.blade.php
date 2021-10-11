@@ -46,13 +46,13 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" name="linkedinUrl" class="form-control input-lg text-white"
-                                       placeholder="LinkedIn Url :">
+                                       placeholder="LinkedIn Url :" required>
                             </div>
                             <div class="input-group">
                                 <input type="text" class="form-control input-lg text-white" placeholder="Özgeçmiş :"
                                        aria-describedby="basic-addon2" disabled>
                                 <span class="input-group-addon" id="basic-addon2"><input type="file" name="resumePath"
-                                                                                         placeholder="Özgeçmiş :"></span>
+                                                                                         placeholder="Özgeçmiş :" required></span>
                             </div>
                             <br>
                             <div class="form-check">

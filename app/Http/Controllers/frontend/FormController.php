@@ -19,7 +19,7 @@ class FormController extends Controller
             'nameSurname' => 'required',
             'mail' => 'required|email',
             'linkedinUrl' => 'required',
-//            'resumePath' => 'required|mimes:pdf',
+            'resumePath' => 'required|mimes:pdf',
             'isKvkk' => 'required'
         ]);
 

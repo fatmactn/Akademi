@@ -17,7 +17,7 @@
                 @foreach($contents as $content)
                     @if($content->status == 1)
                         <div class="col-md-6 col-sm-12">
-                            <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
+                            <a class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
                                 <span class="rotate-box-icon"><i class="fa fa-dot-circle-o"></i></span>
                                 <div class="rotate-box-info">
                                     <h4>{{$content->title}}</h4>

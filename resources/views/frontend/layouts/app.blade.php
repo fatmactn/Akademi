@@ -29,7 +29,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Servislet Akademi">
     <meta property="og:description" content="İş yaşantısında kullanılan teknolojiler üzerine eğitim vererek çalışma hayatına tecrübeli mühendisler kazandırmayı hedefleyen hazırlık programıdır.">
-    <meta property="og:image" content="public/frontend/img/logo2-1.png">
+    <meta property="og:image" content="https://akademi.servislet.com/frontend/img/logo2-1.png">
     <meta name="og:keywords" content="Akademi, Servislet, Eğitim, Staj, php, laravel" />
     <meta name="og:author" content="servislet.com">
 
@@ -39,7 +39,7 @@
     <meta property="twitter:url" content="https://akademi.servislet.com/">
     <meta name="twitter:title" content="Servislet Akademi">
     <meta name="twitter:description" content="İş yaşantısında kullanılan teknolojiler üzerine eğitim vererek çalışma hayatına tecrübeli mühendisler kazandırmayı hedefleyen hazırlık programıdır.">
-    <meta name="twitter:image" content="public/frontend/img/logo2-1.png">
+    <meta name="twitter:image" content="https://akademi.servislet.com/frontend/img/logo2-1.png">
     <meta name="twitter:keywords" content="Akademi, Servislet, Eğitim, Staj, php, laravel" />
     <meta name="twitter:author" content="servislet.com">
 

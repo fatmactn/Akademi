@@ -37,7 +37,8 @@ class ContactFormController extends Controller
                 'body' => '"'.$request->name.'"' .' tarafından yeni mesajınız var.'
             ];
 
-            Mail::to(['fatmacetin@servislet.com', 'ekremcivan@servislet.com', 'cevdet@servislet.com', 'mustafakoc@servislet.com'])->send(new \App\Mail\TestMail($data));
+            //TODO mail sunucusu sorunu cozuldukten sonra acilacaktir
+            //Mail::to(['fatmacetin@servislet.com', 'ekremcivan@servislet.com', 'cevdet@servislet.com', 'mustafakoc@servislet.com'])->send(new \App\Mail\TestMail($data));
 
             return redirect()->route('frontend.home.index', '#contact-section')->with('success0', 'Mesajınız kaydedildi.');
         } catch (\Exception $e) {

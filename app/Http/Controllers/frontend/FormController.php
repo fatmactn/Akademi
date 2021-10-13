@@ -42,12 +42,14 @@ class FormController extends Controller
         }
         $fileModel->save();
 
+
         $data = [
             'title' => 'Mail from ServisletAkademi',
             'body' => '"'.$fileModel->nameSurname.'"' .' tarafından yeni başvurunuz var.'
         ];
 
-        Mail::to(['fatmacetin@servislet.com', 'ekremcivan@servislet.com', 'cevdet@servislet.com', 'mustafakoc@servislet.com'])->send(new \App\Mail\TestMail($data));
+        //TODO mail sunucusu sorunu cozuldukten sonra acilacaktir
+        //Mail::to(['fatmacetin@servislet.com', 'ekremcivan@servislet.com', 'cevdet@servislet.com', 'mustafakoc@servislet.com'])->send(new \App\Mail\TestMail($data));
 
         return redirect()->route('frontend.home.index', '#apply-section')->with('success1', 'Başvurunuz kaydedildi.');
 

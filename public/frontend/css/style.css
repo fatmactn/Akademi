@@ -681,13 +681,13 @@ a.rotate-box-2:hover {
 }
 
 
-.team-items .col-md-2:nth-child(7n+6) {
-	clear: left;
-	margin-left: 24.9999999%;
+.team-items .col-md-2:nth-child(7n+5) {
+    clear: left;
+    margin-left: 24.9999999%;
 }
 .team-items .col-md-2:nth-child(7n+1) {
-	clear: left;
-	margin-left: 12%;
+    clear: left;
+    margin-left: 16.6666666%;
 }
 
 /* ===== End team ===== */

@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label>Fotoğraf</label>
                             <input type="text"  class="form-control" value="{{ old('imageUrl')  }}" disabled>
-                            <span class="input-group-addon" id="basic-addon2"><input type="file" name="imageUrl" placeholder="Image :"></span>
+                            <span class="input-group-addon" id="basic-addon2"><input type="file" name="imageUrl" placeholder="Image :" ></span>
                         </div>
 
                         <br>

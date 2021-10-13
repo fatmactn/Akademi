@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
   //  return view('welcome');
 //});
 
+
 Route::get('/login', [\App\Http\Controllers\backend\LoginController::class, 'index'])->name('backend.login.index');
 Route::post('/login', [\App\Http\Controllers\backend\LoginController::class, 'login'])->name('backend.login.login');
 Route::get('/register', [\App\Http\Controllers\backend\RegisterController::class, 'index'])->name('backend.register.index');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
@@ -31,6 +32,12 @@ class ContactFormController extends Controller
                 'message' => $request->message,
                 'isKvkk' => (isset($request->isKvkk) && ($request->isKvkk == 'on')) ? true : false
             ]);
+            $data = [
+                'title' => 'Mail from ServisletAkademi',
+                'body' => '"'.$request->name.'"' .' tarafından yeni mesajınız var.'
+            ];
+
+            Mail::to(['fatmacetin@servislet.com', 'ekremcivan@servislet.com', 'mustafakoc@servislet.com'])->send(new \App\Mail\TestMail($data));
 
             return redirect()->route('frontend.home.index', '#contact-section')->with('success0', 'Mesajınız kaydedildi.');
         } catch (\Exception $e) {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
@@ -40,6 +41,14 @@ class FormController extends Controller
             $fileModel->resumePath ="";
         }
         $fileModel->save();
+
+        $data = [
+            'title' => 'Mail from ServisletAkademi',
+            'body' => '"'.$fileModel->nameSurname.'"' .' tarafından yeni başvurunuz var.'
+        ];
+
+        Mail::to(['fatmacetin@servislet.com', 'ekremcivan@servislet.com', 'mustafakoc@servislet.com'])->send(new \App\Mail\TestMail($data));
+
         return redirect()->route('frontend.home.index', '#apply-section')->with('success1', 'Başvurunuz kaydedildi.');
 
 

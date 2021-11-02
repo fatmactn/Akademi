@@ -36,7 +36,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <a href="https://test.visetra.com/#/embed/616ef3196993730ec3da5f66">Ofiste sanal gezinti için tıklayınız</a>
+                        <center><a href="https://test.visetra.com/#/embed/616ef3196993730ec3da5f66">Ofiste sanal gezinti için tıklayınız</a></center>
                     </div>
 
                 </div>

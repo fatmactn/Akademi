@@ -9,7 +9,9 @@
                             <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
                                 <h2>Ofisimiz</h2>
                                 <div class="devider"></div>
-                                <a class="subtitle" target="_blank" href="https://test.visetra.com/#/embed/616ef3196993730ec3da5f66">Ofiste sanal gezinti için tıklayınız</a>
+                                <br><br><br>
+                                <a href="https://test.visetra.com/#/embed/616ef3196993730ec3da5f66" target="_blank"><button class="btn image3d wow bounceInRight" data-wow-delay="0.8s"
+                                        style="background-color:#363940;" >OFİSİMİZİN 3 BOYUTLU GÖRÜNTÜLERİ İÇİN TIKLAYINIZ.</button></a>
                                 @foreach($contents as $content)
                                     <p class="subtitle">@if($content->title == 'ofis' && $content->status == 1) {{$content->$content}} @endif</p>
                                 @endforeach

@@ -10,7 +10,7 @@
                                 <h2>Ofisimiz</h2>
                                 <div class="devider"></div>
                                 <br><br><br>
-                                <iframe src="https://test.visetra.com/#/embed/616ef3196993730ec3da5f66" frameBorder="0"></iframe>
+                                <iframe src="https://test.visetra.com/#/embed/616ef3196993730ec3da5f66" frameBorder="0" class="col-lg-12" height="600" allowfullscreen></iframe>
                                 @foreach($contents as $content)
                                     <p class="subtitle">@if($content->title == 'ofis' && $content->status == 1) {{$content->$content}} @endif</p>
                                 @endforeach
@@ -18,6 +18,7 @@
                         </div>
                     </div>
                     <!-- End page header-->
+{{--
                     <div class="portfoloi_content_area">
                         <div class="portfolio_content">
                             <div class="row" id="portfolio">
@@ -39,6 +40,7 @@
                             </div>
                         </div>
                     </div>
+--}}
 
                 </div>
             </div>
